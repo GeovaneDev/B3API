@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-function apiAvailable(request, response) {
+async function apiAvailable(request, response) {
     //Usa o get para puxar dados da api
-    axios.get(`https://brapi.dev/api/available`, {
+    await axios.get(`https://brapi.dev/api/available`, {
         params: {
             token: process.env.TOKEN //Usa o token do arquivo .env
         }
@@ -19,9 +19,8 @@ function apiAvailable(request, response) {
             //Responde com a resposta em json
             return response.json(data);
         })
-        //Trata os erros
         .catch((error) => {
-            console.error(error);
+            //Responde com o erro
             return response.status(500).json({ error: 'Internal Server Error' });
         });
 }

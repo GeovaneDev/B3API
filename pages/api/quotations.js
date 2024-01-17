@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-async function selic(request, response){
-    //Usa o get para puxar dados da api
-    await axios.get(`https://api.hgbrasil.com/finance/taxes`, {
+async function quotations(request, response) {
+    //Envia o request GET para a api
+    await axios.get("https://api.hgbrasil.com/finance/quotations", {
         params: {
             key: process.env.APIKEYHG, //Usa a apikey do arquivo .env
         }
     })
     .then((axiosResponse) => {
-        //Salva os dados da resposta da api
+        //Salva a resposta
         const data = axiosResponse.data;
 
         //Cache da Vercel
@@ -16,14 +16,13 @@ async function selic(request, response){
         response.setHeader('CDN-Cache-Control', 'max-age=43200');
         response.setHeader('Cache-Control', 'max-age=43200')
 
-        //Responde com a resposta em json
-        return response.status(200).json(data)
+        //Retorna em json
+        return response.json(data);
     })
-    //Trata os erros
     .catch((error) => {
-        //Responde com o erro
-        return response.status(500).json({ error: "Internel Server Error" });
+        //Responde em caso de erro
+        return response.json({ error: "Internel server error" });
     })
 }
 
-export default selic
+export default quotations;
