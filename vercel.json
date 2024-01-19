@@ -1,0 +1,24 @@
+{
+    "crons": [
+      {
+        "path": "/api/fundamentus/result",
+        "schedule": "* * * * *"
+      },
+      {
+        "path": "/api/fundamentus/list",
+        "schedule": "* * * * *"
+      },
+      {
+        "path": "/api/available",
+        "schedule": "* * * * *"
+      },
+      {
+        "path": "/api/taxes",
+        "schedule": "* * * * *"
+      },
+      {
+        "path": "/api/quotations",
+        "schedule": "* * * * *"
+      }
+    ]
+  }
