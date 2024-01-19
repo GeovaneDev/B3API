@@ -11,10 +11,10 @@ export default async (req, res) => {
     }
 
     //URL da vercel ou localhost
-    const URL = process.env.VERCEL_URL || "http://localhost:3000";
+    const URL = process.env.URL
 
     //Puxa a resposta
-    const response = await axios.get(`${URL}/api/fundamentus/result`);
+    const response = await axios.get(`${URL}api/fundamentus/result`);
     const data = response.data.data;
 
     if (data && data[ticker]) {

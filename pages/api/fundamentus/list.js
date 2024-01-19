@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async (req, res) => {
   try {
     //URL da vercel ou localhost
-    const URL = process.env.VERCEL_URL || "http://localhost:3000/";
+    const URL = process.env.URL
     //Envia o request
     const response = await axios.get(`${URL}api/fundamentus/result`);
     //Salva os dados
@@ -20,6 +20,6 @@ export default async (req, res) => {
     }
   } catch (error) {
     //Trata possiveis erros
-    res.status(500).json({ error: `Internal Server Error ${error}` });
+    res.status(500).json({ error: `Internal Server Error` });
   }
 };
