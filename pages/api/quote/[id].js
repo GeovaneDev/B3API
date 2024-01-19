@@ -20,9 +20,9 @@ async function quote(request, response) {
     //Salva os dados
     const data = axiosResponse.data;
     //Salva o cache local e da vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=43200');
-    response.setHeader('CDN-Cache-Control', 'max-age=43200');
-    response.setHeader('Cache-Control', 'max-age=43200');
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('Cache-Control', 'max-age=21600');
     //Responde com os dados
     return response.status(200).json(data);
   } catch (error) {

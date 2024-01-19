@@ -12,9 +12,9 @@ async function quotations(request, response) {
         const data = axiosResponse.data;
 
         //Cache da Vercel
-        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=43200');
-        response.setHeader('CDN-Cache-Control', 'max-age=43200');
-        response.setHeader('Cache-Control', 'max-age=43200')
+        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+        response.setHeader('CDN-Cache-Control', 'max-age=21600');
+        response.setHeader('Cache-Control', 'max-age=21600')
 
         //Retorna em json
         return response.json(data);

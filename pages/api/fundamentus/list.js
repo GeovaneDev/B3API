@@ -1,25 +1,30 @@
 import axios from 'axios';
 
-export default async (req, res) => {
+export default async (request, response) => {
   try {
     //URL da vercel ou localhost
     const URL = process.env.URL
     //Envia o request
-    const response = await axios.get(`${URL}api/fundamentus/result`);
+    const listResponse = await axios.get(`${URL}api/fundamentus/result`);
     //Salva os dados
-    const data = response.data.data;
+    const data = listResponse.data.data;
+
+    //Cache da Vercel
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('Cache-Control', 'max-age=21600')
 
     if (data) {
       //Separa somente os nomes
       const listaAtivos = Object.keys(data);
       //Retorna a lita em json
-      return res.status(200).json({ data: listaAtivos });
+      return response.status(200).json({ data: listaAtivos });
     } else {
       //Trata possiveis erros
-      return res.status(404).json({ error: 'Unable to retrieve the list of assets.' });
+      return response.status(404).json({ error: 'Unable to retrieve the list of assets.' });
     }
   } catch (error) {
     //Trata possiveis erros
-    res.status(500).json({ error: `Internal Server Error` });
+    response.status(500).json({ error: `Internal Server Error` });
   }
 };

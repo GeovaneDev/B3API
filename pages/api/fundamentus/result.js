@@ -1,7 +1,7 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 
-export default async (req, res) => {
+export default async (request, response) => {
   try {
     //Url dos dados
     const url = 'http://www.fundamentus.com.br/resultado.php';
@@ -52,7 +52,7 @@ export default async (req, res) => {
     };
 
     //Puxa os dados
-    const response = await axios.post(url, new URLSearchParams(data), {
+    const dataResponse = await axios.post(url, new URLSearchParams(data), {
       headers: {
         'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201',
         'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
@@ -60,7 +60,7 @@ export default async (req, res) => {
       }
     });
 
-    const content = response.data;
+    const content = dataResponse.data;
 
     // Parsing HTML usando cheerio
     const $ = cheerio.load(content);
@@ -97,10 +97,15 @@ export default async (req, res) => {
       result[key] = value;
     });
 
+    //Cache da Vercel
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('CDN-Cache-Control', 'max-age=21600');
+    response.setHeader('Cache-Control', 'max-age=21600')
+
     // Envie os dados extraídos como resposta
-    res.status(200).json({ data: result });
+    response.status(200).json({ data: result });
   } catch (error) {
     //Trata possiveis erros
-    res.status(500).json({ error: 'Internal Server Error' });
+    response.status(500).json({ error: 'Internal Server Error' });
   }
 };

@@ -12,9 +12,9 @@ async function apiAvailable(request, response) {
             const data = axiosResponse.data;
 
             //Cache da Vercel
-            response.setHeader('Vercel-CDN-Cache-Control', 'max-age=43200');
-            response.setHeader('CDN-Cache-Control', 'max-age=43200');
-            response.setHeader('Cache-Control', 'max-age=43200')
+            response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+            response.setHeader('CDN-Cache-Control', 'max-age=21600');
+            response.setHeader('Cache-Control', 'max-age=21600')
 
             //Responde com a resposta em json
             return response.json(data);
