@@ -19,7 +19,7 @@ const Navbar = () => {
               <Link href="/docs" passHref className="nav-link btn btn-outline-primary active">Documentação</Link>
             </li>
             <li className="nav-item">
-              <a href="https://github.com/seu-username/seu-repositorio" target="_blank" className="nav-link" rel="noopener noreferrer">
+              <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
               </a>
             </li>
