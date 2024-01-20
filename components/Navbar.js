@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+config.autoAddCss = false;
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link href="/" className="navbar-brand d-flex align-items-center">
-          <img src="/BrInvestAPI.png" alt="BrInvestAPI Icon" style={{ width: '40px', height: '40px', marginRight: '10px' }} />
-          <span className="fw-bold">BrInvestAPI</span>
+        <Link href="/" passHref className="navbar-brand d-flex align-items-center">
+            <img src="/BrInvestAPI.png" alt="BrInvestAPI Icon" style={{ width: '40px', height: '40px', marginRight: '10px' }} />
+            <span className="fw-bold">BrInvestAPI</span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -20,7 +24,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <FontAwesomeIcon icon={faGithub} size="lg"/>
               </a>
             </li>
           </ul>
