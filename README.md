@@ -1,21 +1,41 @@
-# BrInvestidor
+# BrInvestAPI
 
-## Overview
+![BrInvestidor](https://github.com/GeovaneDev/BrInvestAPI/assets/87013843/dbcde03e-298f-4e78-831f-2b9fa3e8c6c3)
 
-The BrInvestidor is a simple RESTful API designed to retrieve stock-related data from the Brazilian stock exchange (B3).
+Bem-vindo ao repositório da BrInvestAPI - Sua fonte para dados em tempo real do mercado de ações brasileiro.
 
-## Getting Started
+## Sobre
 
-### Prerequisites
+A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Esta API gratuita é projetada para ajudar você a integrar informações financeiras diretamente em suas aplicações.
 
-Before you begin, ensure you have the following:
+## Funcionalidades
 
-- Node.js installed
-- npm (Node Package Manager) installed
+- Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.
+- Mantenha-se informado com dados do mercado de ações em tempo real e atualizados.
+- Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.
 
-Contributing
+## Como Começar
 
-Contributions are welcome! If you have any improvements or new features to propose, please submit a pull request.
-License
+1. Clone este repositório:
 
-This project is licensed under the MIT License.
+```
+git clone https://github.com/seu-username/BrInvestAPI.git
+```
+2. Instale as dependências:
+```
+cd BrInvestAPI
+npm install
+```
+3. Inicie o servidor de desenvolvimento:
+```
+npm run dev
+```
+4. Acesse http://localhost:3000 em seu navegador.
+
+Contribuindo
+
+Fique à vontade para contribuir para o desenvolvimento da BrInvestAPI. Sua colaboração é bem-vinda! Você pode colaborar com código enviando um [Pull Request](https://github.com/GeovaneDev/BrInvestAPI/pulls) ou uma sugestão com os [Issues](https://github.com/GeovaneDev/BrInvestAPI/issues)
+
+Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://github.com/GeovaneDev/BrInvestAPI/blob/main/LICENSE).
