@@ -2,15 +2,7 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
-        let URL;
-
-        if (process.env.ENV === 'production') {
-            // URL da produção no Vercel ou localhost com https
-            URL = `${process.env.URL}`;
-        } else {
-            // URL de desenvolvimento localhost com http
-            URL = 'http://localhost:3000';
-        }
+        let URL = process.env.URL
 
         const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
         const { query } = req.query;
