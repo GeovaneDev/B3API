@@ -2,7 +2,9 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
-        const { data: { data: stockList } } = await axios.get(`${process.env.URL}/api/fundamentus/available`);
+        let URL = process.env.URL
+
+        const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
         const { query } = req.query;
 
         if (!query) {
@@ -10,7 +12,7 @@ export default async (req, res) => {
         }
 
         const queryUpperCase = query.toUpperCase();
-        
+
         const stockIndex = stockList.reduce((index, ticker) => {
             index[ticker] = true;
             return index;

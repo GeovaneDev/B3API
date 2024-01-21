@@ -10,11 +10,10 @@ export default async (request, response) => {
       return response.status(400).json({ error: 'The "ticket" parameter is mandatory.' });
     }
 
-    //URL da vercel ou localhost
-    const URL = process.env.URL
+    let URL = process.env.URL
 
     //Puxa a resposta
-    const fundamentusResponse = await axios.get(`${URL}api/fundamentus/result`);
+    const fundamentusResponse = await axios.get(`${URL}/api/fundamentus/result`);
     const data = fundamentusResponse.data.data;
 
     //Cache da Vercel

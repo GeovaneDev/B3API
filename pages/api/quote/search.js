@@ -2,8 +2,10 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
+        let URL = process.env.URL
+
         res.setHeader('Cache-Control', 'max-age=3600');
-        const { data: availableData } = await axios.get(`${process.env.URL}/api/quote/available`);
+        const { data: availableData } = await axios.get(`${URL}/api/quote/available`);
         const data = availableData;
         const { query } = req.query;
 
