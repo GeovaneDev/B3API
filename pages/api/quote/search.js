@@ -4,9 +4,9 @@ export default async (req, res) => {
     try {
         let URL;
 
-        if (process.env.VERCEL_ENV === 'production') {
+        if (process.env.ENV === 'production') {
             // URL da produção no Vercel ou localhost com https
-            URL = `https://${process.env.VERCEL_URL}`;
+            URL = `https://${process.env.URL}`;
         } else {
             // URL de desenvolvimento localhost com http
             URL = 'http://localhost:3000';
