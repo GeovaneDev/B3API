@@ -1,6 +1,6 @@
 {
-  "name": "brinvestidor",
-  "version": "0.1.0",
+  "name": "brinvestapi",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -27,7 +27,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.1.0",
     "typescript": "^5"
   }
 }
