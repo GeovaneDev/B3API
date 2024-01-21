@@ -25,8 +25,7 @@ export default async (req, res) => {
 
         // Filtra os dados com base na consulta
         const filteredData = {
-            indexes: availableData.indexes.filter(index => index.includes(queryUpperCase)),
-            stocks: availableData.stocks.filter(stock => stock.includes(queryUpperCase)),
+            available: availableData.available.filter(index => index.includes(queryUpperCase)),
         };
 
         // Responde com os dados filtrados

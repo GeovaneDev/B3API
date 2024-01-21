@@ -12,7 +12,7 @@ async function quote(request, response) {
   // Obtém a lista de ações disponíveis
   const availableStocksUrl = `${process.env.URL}/api/quote/available`;
   const availableStocksResponse = await axios.get(availableStocksUrl);
-  const availableStocks = availableStocksResponse.data.stocks;
+  const availableStocks = availableStocksResponse.data.available;
 
   // Verifica se a ação está na lista de ações disponíveis
   if (!availableStocks.includes(id.toUpperCase())) {
