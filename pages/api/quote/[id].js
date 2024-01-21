@@ -20,14 +20,14 @@ async function quote(request, response) {
     //Salva os dados
     const data = axiosResponse.data;
     //Salva o cache local e da vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('Cache-Control', 'max-age=21600');
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=10800');
+    response.setHeader('CDN-Cache-Control', 'max-age=10800');
+    response.setHeader('Cache-Control', 'max-age=10800');
     //Responde com os dados
     return response.status(200).json(data);
   } catch (error) {
     //Responde com o erro
-    return response.status(500).json({ error: 'Internal Server Error' });
+    return response.status(500).json({ error: 'Not found go to https://www.brinvestapi.pt/api/quote/available' });
   }
 }
 

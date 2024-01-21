@@ -1,3 +1,5 @@
+"use client"
+import { DefaultSeo } from 'next-seo';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
@@ -7,6 +9,25 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <div>
+      <DefaultSeo
+        title="API B3: BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real"
+        description="Descubra a API B3 líder no mercado, BrInvestAPI. Fornece dados confiáveis e em tempo real sobre ações, cotações, índices e informações essenciais para o mercado financeiro do Brasil."
+        openGraph={{
+          type: 'website',
+          locale: 'pt_BR',
+          url: 'https://www.brinvestapi.pt/',
+          site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          images: [
+            {
+              url: 'https://www.brinvestapi.pt/BrInvestAPI.png',
+              width: 120,
+              height: 120,
+              alt: 'BrInvestAPI Icon',
+            },
+          ],
+        }}
+        canonical="https://www.brinvestapi.pt/"
+      />
       <Navbar />
 
       <div className="container mt-5">

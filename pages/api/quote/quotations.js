@@ -21,6 +21,7 @@ async function quotations(request, response) {
     })
     .catch((error) => {
         //Responde em caso de erro
+        console.error(error)
         return response.json({ error: "Internel server error" });
     })
 }
