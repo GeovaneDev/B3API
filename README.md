@@ -32,10 +32,10 @@ npm run dev
 ```
 4. Acesse http://localhost:3000 em seu navegador.
 
-Contribuindo
+## Contribuindo
 
 Fique à vontade para contribuir para o desenvolvimento da BrInvestAPI. Sua colaboração é bem-vinda! Você pode colaborar com código enviando um [Pull Request](https://github.com/GeovaneDev/BrInvestAPI/pulls) ou uma sugestão com os [Issues](https://github.com/GeovaneDev/BrInvestAPI/issues)
 
-Licença
+## Licença
 
 Este projeto está licenciado sob a [Licença MIT](https://github.com/GeovaneDev/BrInvestAPI/blob/main/LICENSE).

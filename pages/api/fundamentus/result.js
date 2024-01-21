@@ -52,15 +52,13 @@ export default async (request, response) => {
     };
 
     //Puxa os dados
-    const dataResponse = await axios.post(url, new URLSearchParams(data), {
+    const { data: content } = await axios.post(url, new URLSearchParams(data), {
       headers: {
         'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201',
         'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       }
     });
-
-    const content = dataResponse.data;
 
     // Parsing HTML usando cheerio
     const $ = cheerio.load(content);

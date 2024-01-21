@@ -2,7 +2,9 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
-        const { data: { data: stockList } } = await axios.get(`${process.env.URL}/api/fundamentus/available`);
+        res.setHeader('Cache-Control', 'max-age=3600');
+        const { data: availableData } = await axios.get(`${process.env.URL}/api/quote/available`);
+        const data = availableData;
         const { query } = req.query;
 
         if (!query) {
@@ -10,17 +12,14 @@ export default async (req, res) => {
         }
 
         const queryUpperCase = query.toUpperCase();
-        
-        const stockIndex = stockList.reduce((index, ticker) => {
-            index[ticker] = true;
-            return index;
-        }, {});
+        const filteredData = {
+            indexes: data.indexes.filter(index => index.includes(queryUpperCase)),
+            stocks: data.stocks.filter(stock => stock.includes(queryUpperCase)),
+        };
 
-        const filteredStocks = stockList.filter(ticker => ticker.includes(queryUpperCase) && stockIndex[ticker]);
-
-        res.status(200).json({ data: filteredStocks });
+        res.status(200).json({ data: filteredData });
     } catch (error) {
-        console.error('Error searching stocks:', error);
+        console.error('Error searching data:', error);
 
         if (error.response) {
             res.status(error.response.status).json({ error: error.response.data });
