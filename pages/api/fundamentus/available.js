@@ -2,10 +2,17 @@ import axios from 'axios';
 
 export default async (request, response) => {
   try {
-    //URL da vercel ou localhost
-    const URL = process.env.URL
+    let URL;
+
+    if (process.env.VERCEL_ENV === 'production') {
+      // URL da produção no Vercel ou localhost com https
+      URL = `https://${process.env.VERCEL_URL}`;
+    } else {
+      // URL de desenvolvimento localhost com http
+      URL = 'http://localhost:3000';
+    }
     //Envia o request
-    const listResponse = await axios.get(`${URL}api/fundamentus/result`);
+    const listResponse = await axios.get(`${URL}/api/fundamentus/result`);
     //Salva os dados
     const data = listResponse.data.data;
 
@@ -25,6 +32,7 @@ export default async (request, response) => {
     }
   } catch (error) {
     //Trata possiveis erros
+    console.error(error)
     response.status(500).json({ error: `Internal Server Error` });
   }
 };

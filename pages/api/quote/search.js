@@ -2,8 +2,18 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
+        let URL;
+
+        if (process.env.VERCEL_ENV === 'production') {
+            // URL da produção no Vercel ou localhost com https
+            URL = `https://${process.env.VERCEL_URL}`;
+        } else {
+            // URL de desenvolvimento localhost com http
+            URL = 'http://localhost:3000';
+        }
+
         res.setHeader('Cache-Control', 'max-age=3600');
-        const { data: availableData } = await axios.get(`${process.env.URL}/api/quote/available`);
+        const { data: availableData } = await axios.get(`${URL}/api/quote/available`);
         const data = availableData;
         const { query } = req.query;
 

@@ -2,7 +2,17 @@ import axios from 'axios';
 
 export default async (req, res) => {
     try {
-        const { data: { data: stockList } } = await axios.get(`${process.env.URL}/api/fundamentus/available`);
+        let URL;
+
+        if (process.env.VERCEL_ENV === 'production') {
+            // URL da produção no Vercel ou localhost com https
+            URL = `https://${process.env.VERCEL_URL}`;
+        } else {
+            // URL de desenvolvimento localhost com http
+            URL = 'http://localhost:3000';
+        }
+
+        const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
         const { query } = req.query;
 
         if (!query) {
@@ -10,7 +20,7 @@ export default async (req, res) => {
         }
 
         const queryUpperCase = query.toUpperCase();
-        
+
         const stockIndex = stockList.reduce((index, ticker) => {
             index[ticker] = true;
             return index;
