@@ -63,7 +63,7 @@ const Introduction = () => {
               <div className="mt-5">
                 <h2 className="text-center mb-4">Dados de Ações</h2>
                 <p>
-                  Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço <a href="https://brapi.com.br/" target="_blank" rel="noopener noreferrer">BrAPI</a> para manter você informado sobre as últimas mudanças no mercado de ações brasileiro.
+                  Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer">BrAPI</a> para manter você informado sobre as últimas mudanças no mercado de ações brasileiro.
                 </p>
               </div>
             </div>

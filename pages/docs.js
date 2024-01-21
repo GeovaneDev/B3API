@@ -51,14 +51,18 @@ const Docs = () => {
                             </p>
 
                             <div className="border-top mt-4 pt-4">
-                                <h2 className="mb-4">Introdução</h2>
+                                <h2 className="mb-4">
+                                    <Link href="/docs/introduction" className="text-decoration-none">Introdução</Link>
+                                </h2>
                                 <p>
                                     Uma visão geral da API e suas principais funcionalidades.
                                 </p>
                             </div>
 
                             <div className="border-top mt-4 pt-4">
-                                <h2 className="mb-4">Endpoints</h2>
+                                <h2 className="mb-4">
+                                    <Link href="/docs/endpoints" className="text-decoration-none">Endpoints</Link>
+                                </h2>
                                 <p>
                                     Lista e descrição dos endpoints disponíveis.
                                 </p>
