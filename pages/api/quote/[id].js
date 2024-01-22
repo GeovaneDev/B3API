@@ -16,7 +16,7 @@ async function quote(request, response) {
 
   // Verifica se a ação está na lista de ações disponíveis
   if (!availableStocks.includes(id.toUpperCase())) {
-    return response.status(404).json({ error: 'Stock not found. Go to https://www.brinvestapi.pt/api/quote/available' });
+    return response.status(404).json({ error: `Stock not found. Go to ${process.env.URL}/api/quote/available` });
   }
 
   // Constroi a url da api

@@ -46,27 +46,27 @@ const Endpoints = () => {
                             <div className="endpoint-section">
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
-                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://brinvestapi.pt/api/fundamentus/available</code>
+                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/available</code>
                                 </p>
                                 <p>
-                                    <strong>Informações sobre os fundamentus da empresa:</strong> [GET/POST] <code>https://brinvestapi.pt/api/fundamentus/[TICKER]</code> (onde [TICKER] é um item da API /api/fundamentus/available)
+                                    <strong>Informações sobre os fundamentus da empresa:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/[TICKER]</code> (onde [TICKER] é um item da API /api/fundamentus/available)
                                 </p>
                                 <p>
-                                    <strong>Retorna todos os dados, incluindo a lista e informações individuais de cada:</strong> [GET/POST] <code>https://brinvestapi.pt/api/fundamentus/result</code>
+                                    <strong>Retorna todos os dados, incluindo a lista e informações individuais de cada:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/result</code>
                                 </p>
                                 <p>
-                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://brinvestapi.pt/api/fundamentus/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, PETR que mostra PETR4 e PETR3)
+                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, PETR que mostra PETR4 e PETR3)
                                 </p>
 
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://brinvestapi.pt/api/fundamentus/PETR4" passHref target="_blank">https://brinvestapi.pt/api/fundamentus/PETR4</Link>
+                                            <Link href="https://www.brinvestapi.pt/api/fundamentus/PETR4" passHref target="_blank">https://www.brinvestapi.pt/api/fundamentus/PETR4</Link>
                                             - Retorna informações sobre os fundamentos da PETR4.
                                         </li>
                                         <li>
-                                            <Link href="https://brinvestapi.pt/api/fundamentus/search?query=PETR" passHref target="_blank">https://brinvestapi.pt/api/fundamentus/search?query=PETR</Link>
+                                            <Link href="https://www.brinvestapi.pt/api/fundamentus/search?query=PETR" passHref target="_blank">https://www.brinvestapi.pt/api/fundamentus/search?query=PETR</Link>
                                             - Pesquisa por "PETR" retornando resultados.
                                         </li>
                                     </ul>
@@ -76,27 +76,27 @@ const Endpoints = () => {
                             <div className="endpoint-section mt-5">
                                 <h2 className="text-center mb-4">Quote</h2>
                                 <p>
-                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://brinvestapi.pt/api/quote/available</code>
+                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/available</code>
                                 </p>
                                 <p>
-                                    <strong>Retorna o CDI e SELIC:</strong> [GET/POST] <code>https://brinvestapi.pt/api/quote/taxes</code>
+                                    <strong>Retorna o CDI e SELIC:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/taxes</code>
                                 </p>
                                 <p>
-                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://brinvestapi.pt/api/quote/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, ALP que mostra ALPA4, ALPK3, entre outros)
+                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, ALP que mostra ALPA4, ALPK3, entre outros)
                                 </p>
                                 <p>
-                                    <strong>Retorna dados de uma ação específica:</strong> [GET/POST] <code>https://brinvestapi.pt/api/quote/[TICKER]</code>
+                                    <strong>Retorna dados de uma ação específica:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/[TICKER]</code>
                                 </p>
 
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://www.brinvestapi.pt/api/quote/VALE3" passHref target="_blank">https://brinvestapi.pt/api/quote/ITUB4</Link>
+                                            <Link href="https://www.brinvestapi.pt/api/quote/VALE3" passHref target="_blank">https://www.brinvestapi.pt/api/quote/ITUB4</Link>
                                             - Retorna informações sobre a ação VALE3.
                                         </li>
                                         <li>
-                                            <Link href="https://brinvestapi.pt/api/quote/search?query=VALE" passHref target="_blank">https://brinvestapi.pt/api/quote/search?query=VALE</Link>
+                                            <Link href="https://www.brinvestapi.pt/api/quote/search?query=VALE" passHref target="_blank">https://www.brinvestapi.pt/api/quote/search?query=VALE</Link>
                                             - Pesquisa por "VALE" retornando resultados.
                                         </li>
                                     </ul>
