@@ -1,16 +1,15 @@
 import axios from 'axios';
 
-// Função que trata a requisição para buscar dados disponíveis com base em uma consulta
 export default async (req, res) => {
     try {
         // Obtém a URL da API do ambiente
-        let URL = process.env.URL;
+        const apiUrl = `${process.env.URL}/api/quote/result`;
 
         // Define o cabeçalho de controle de cache
         res.setHeader('Cache-Control', 'max-age=3600');
 
-        // Faz uma solicitação para obter os dados disponíveis
-        const { data: availableData } = await axios.get(`${URL}/api/quote/available`);
+        // Faz uma solicitação para obter todos os dados disponíveis
+        const { data: allData } = await axios.get(apiUrl);
 
         // Obtém a consulta da requisição
         const { query } = req.query;
@@ -25,14 +24,14 @@ export default async (req, res) => {
 
         // Filtra os dados com base na consulta
         const filteredData = {
-            available: availableData.available.filter(index => index.includes(queryUpperCase)),
+            stocks: allData.data.stocks.filter(stock => stock.stock.includes(queryUpperCase) || stock.name.includes(query)),
+            indexes: allData.data.indexes.filter(index => index.stock.includes(queryUpperCase) || index.name.includes(query)),
         };
 
         // Responde com os dados filtrados
         res.status(200).json({ data: filteredData });
     } catch (error) {
         // Trata erros durante a execução da função
-
         console.error('Error searching data:', error);
 
         // Verifica o tipo de erro e responde adequadamente

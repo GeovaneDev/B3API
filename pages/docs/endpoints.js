@@ -43,21 +43,23 @@ const Endpoints = () => {
                         <div className="bg-light p-5 rounded shadow">
                             <h1 className="display-4 text-center mb-4">Endpoints da BrInvestAPI</h1>
 
+                            {/* Fundamentus Section */}
                             <div className="endpoint-section">
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
-                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/available</code>
+                                    <strong>Buscar opções disponíveis:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/available</code>
                                 </p>
                                 <p>
-                                    <strong>Informações sobre os fundamentus da empresa:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/[TICKER]</code> (onde [TICKER] é um item da API /api/fundamentus/available)
+                                    <strong>Informações sobre os fundamentos da empresa:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                                 </p>
                                 <p>
-                                    <strong>Retorna todos os dados, incluindo a lista e informações individuais de cada:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/result</code>
+                                    <strong>Retornar todos os dados:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/result</code>
                                 </p>
                                 <p>
-                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, PETR que mostra PETR4 e PETR3)
+                                    <strong>Pesquisar por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
                                 </p>
 
+                                {/* Examples */}
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
@@ -73,21 +75,29 @@ const Endpoints = () => {
                                 </div>
                             </div>
 
+                            {/* Quote Section */}
                             <div className="endpoint-section mt-5">
                                 <h2 className="text-center mb-4">Quote</h2>
                                 <p>
-                                    <strong>Todas as opções disponíveis para buscas:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/available</code>
+                                    <strong>Buscar opções disponíveis:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/available</code>
                                 </p>
                                 <p>
-                                    <strong>Retorna o CDI e SELIC:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/taxes</code>
+                                    <strong>Retornar o CDI e SELIC:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/taxes</code>
                                 </p>
                                 <p>
-                                    <strong>Pesquisa por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/search?query=[QUERY]</code> (onde [QUERY] é uma pesquisa, por exemplo, ALP que mostra ALPA4, ALPK3, entre outros)
+                                    <strong>Pesquisar por ticker:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como ALP para resultados como ALPA4 e ALPK3)
                                 </p>
                                 <p>
-                                    <strong>Retorna dados de uma ação específica:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/[TICKER]</code>
+                                    <strong>Retornar dados de uma ação específica:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/[TICKER]</code>
+                                </p>
+                                <p>
+                                    <strong>Retornar todos os dados disponíveis de ações:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/result</code>
+                                </p>
+                                <p>
+                                    <strong>Pesquisar por índice ou nome da empresa:</strong> [GET/POST] <code>https://www.brinvestapi.pt/api/quote/search?query=[QUERY]</code> (substitua [QUERY] pela pesquisa de índice ou nome)
                                 </p>
 
+                                {/* Examples */}
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
@@ -97,7 +107,7 @@ const Endpoints = () => {
                                         </li>
                                         <li>
                                             <Link href="https://www.brinvestapi.pt/api/quote/search?query=VALE" passHref target="_blank">https://www.brinvestapi.pt/api/quote/search?query=VALE</Link>
-                                            - Pesquisa por "VALE" retornando resultados.
+                                            - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
                                         </li>
                                     </ul>
                                 </div>
