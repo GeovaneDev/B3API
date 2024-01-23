@@ -32,6 +32,10 @@ const TermsOfService = () => {
         <div className="bg-light p-5 rounded shadow">
           <h1 className="display-5 mb-4">Termos de Serviço</h1>
 
+          <div className="alert alert-info" role="alert">
+          Este é um projeto sem fins lucrativos e um hobby do desenvolvedor <a href="https://github.com/GeovaneDev" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">GeovaneDev</a>. Nosso objetivo é disponibilizar dados gratuitamente sobre o mercado financeiro brasileiro. Não buscamos lucro com a API. Portanto, pode ocorrer a mudança de domínio a cada 1 ano para garantir a continuidade deste serviço de forma sustentável.
+          </div>
+
           <div className="mt-4">
             <h2 className="text-center mb-4">1. Aceitação dos Termos</h2>
             <p className="lead">

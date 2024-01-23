@@ -1,11 +1,18 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 const Introduction = () => {
+  const pathname = usePathname();
+
+  const isCurrentPage = (page) => {
+    return pathname === `/docs${page}`;
+  };
+
   return (
     <div>
       <DefaultSeo
@@ -33,9 +40,10 @@ const Introduction = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="list-group">
-              <Link href="/docs" passHref className="list-group-item list-group-item-action">Documentação</Link>
-              <Link href="/docs/introduction" passHref className="list-group-item list-group-item-action">Introdução</Link>
-              <Link href="/docs/endpoints" passHref className="list-group-item list-group-item-action">Endpoints</Link>
+              <Link href="/docs" passHref className={`list-group-item list-group-item-action ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
+              <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>Introdução</Link>
+              <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>Informações sobre o Domínio</Link>
+              <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>Endpoints</Link>
             </div>
           </div>
 
@@ -44,34 +52,43 @@ const Introduction = () => {
               <h1 className="display-4 text-center mb-4">Introdução à BrInvestAPI</h1>
 
               <p className="lead">
-                Bem-vindo à BrInvestAPI, sua fonte para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras para ajudar você a tomar decisões informadas. Abaixo estão os principais dados fornecidos pela BrInvestAPI:
+                Bem-vindo à BrInvestAPI, sua fonte para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras para ajudar você a tomar decisões informadas.
               </p>
 
               <div className="row mt-5">
-                <div className="col-md-4">
-                  <div className="text-center">
-                    <h2 className="mb-4">Dados Fundamentus</h2>
-                    <p>
-                      A BrInvestAPI fornece informações sobre os fundamentus de uma empresa, incluindo dados como P/L, P/VP, PSR, DY, ROIC, ROE, Div. Yield, Cresc. 5 anos, entre outros. Esses dados são obtidos do site <a href="https://www.fundamentus.com.br/" target="_blank" rel="noopener noreferrer">Fundamentus</a>.
-                    </p>
+                <div className="col-md-4 mb-4">
+                  <div className="card h-100">
+                    <div className="card-body text-center">
+                      <h2 className="h3 mb-4">Dados Fundamentus</h2>
+                      <p className="card-text">
+                        A BrInvestAPI fornece informações sobre os fundamentos de uma empresa, incluindo dados como P/L, P/VP, PSR, DY, ROIC, ROE, Div. Yield, Cresc. 5 anos, entre outros.
+                      </p>
+                      <a href="https://www.fundamentus.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="col-md-4">
-                  <div className="text-center">
-                    <h2 className="mb-4">Taxas CDI e SELIC</h2>
-                    <p>
-                      Mantenha-se atualizado com as taxas CDI e SELIC. A BrInvestAPI utiliza dados fornecidos pelo serviço <a href="https://hgbrasil.com/" target="_blank" rel="noopener noreferrer">HG Brasil</a> para oferecer informações sobre essas taxas essenciais.
-                    </p>
+                <div className="col-md-4 mb-4">
+                  <div className="card h-100">
+                    <div className="card-body text-center">
+                      <h2 className="h3 mb-4">Taxas CDI e SELIC</h2>
+                      <p className="card-text">
+                        Mantenha-se atualizado com as taxas CDI e SELIC. A BrInvestAPI utiliza dados fornecidos pelo serviço HG Brasil para oferecer informações sobre essas taxas essenciais.
+                      </p>
+                      <a href="https://hgbrasil.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="col-md-4">
-                  <div className="text-center">
-                    <h2 className="mb-4">Dados de Ações</h2>
-                    <p>
-                      Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer">BrAPI</a> para manter você informado sobre as últimas mudanças no mercado de ações brasileiro.
-                    </p>
+                <div className="col-md-4 mb-4">
+                  <div className="card h-100">
+                    <div className="card-body text-center">
+                      <h2 className="h3 mb-4">Dados de Ações</h2>
+                      <p className="card-text">
+                        Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço BrAPI para manter você informado sobre as últimas mudanças no mercado de ações brasileiro.
+                      </p>
+                      <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                    </div>
                   </div>
                 </div>
               </div>
