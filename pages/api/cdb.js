@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async (req, res) => {
   try {
     // Obter dados de /api/quote/taxes
-    const quoteResponse = await axios.get('https://www.brinvestapi.pt/api/quote/taxes');
+    const quoteResponse = await axios.get('https://www.brinvestapi.me/api/quote/taxes');
     const cdiRateAnual = quoteResponse.data.results[0].cdi_daily;
 
     // Obter parâmetros da requisição

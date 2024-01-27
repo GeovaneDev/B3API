@@ -15,18 +15,18 @@ const Home = () => {
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.brinvestapi.pt/',
+          url: 'https://www.brinvestapi.me/',
           site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
           images: [
             {
-              url: 'https://www.brinvestapi.pt/BrInvestAPI.png',
+              url: 'https://www.brinvestapi.me/BrInvestAPI.png',
               width: 120,
               height: 120,
               alt: 'BrInvestAPI Icon',
             },
           ],
         }}
-        canonical="https://www.brinvestapi.pt/"
+        canonical="https://www.brinvestapi.me/"
       />
       <Navbar />
 

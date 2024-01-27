@@ -21,18 +21,18 @@ const DomainInfo = () => {
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.brinvestapi.pt/docs/domain',
+          url: 'https://www.brinvestapi.me/docs/domain',
           site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
           images: [
             {
-              url: 'https://www.brinvestapi.pt/BrInvestAPI.png',
+              url: 'https://www.brinvestapi.me/BrInvestAPI.png',
               width: 120,
               height: 120,
               alt: 'BrInvestAPI Icon',
             },
           ],
         }}
-        canonical="https://www.brinvestapi.pt/docs/domain"
+        canonical="https://www.brinvestapi.me/docs/domain"
       />
       <Navbar />
 
@@ -56,9 +56,9 @@ const DomainInfo = () => {
               </p>
 
               <div className="mt-5">
-                <h2 className="text-center mb-4">Domínio Atual: <span className="text-primary">https://www.brinvestapi.pt</span></h2>
+                <h2 className="text-center mb-4">Domínio Atual: <span className="text-primary">https://www.brinvestapi.me</span></h2>
                 <h5>
-                  O domínio atual, <strong>brinvestapi.pt</strong>, é fornecido gratuitamente e tem uma duração de 1 ano. Recomendamos usar o domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
+                  O domínio atual, <strong>brinvestapi.me</strong>, é fornecido gratuitamente e tem uma duração de 1 ano. Recomendamos usar o domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
                 </h5>
                 <h5>
                   O domínio fornecido pela <a href='https://vercel.com'>Vercel</a> é <strong>https://brinvestapi.vercel.app/</strong>
