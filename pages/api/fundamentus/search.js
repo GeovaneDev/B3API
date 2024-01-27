@@ -8,7 +8,7 @@ export default async (req, res) => {
 
         // Faz uma solicitação para obter a lista de ações disponíveis
         const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
-        
+
         // Obtém a consulta da requisição
         const { query } = req.query;
 
@@ -21,13 +21,13 @@ export default async (req, res) => {
         const queryUpperCase = query.toUpperCase();
 
         // Cria um índice de ações para otimizar a filtragem
-        const stockIndex = stockList.reduce((index, ticker) => {
-            index[ticker] = true;
+        const stockIndex = stockList.reduce((index, stock) => {
+            index[stock.ticker] = true;
             return index;
         }, {});
 
         // Filtra as ações com base na consulta e no índice
-        const filteredStocks = stockList.filter(ticker => ticker.includes(queryUpperCase) && stockIndex[ticker]);
+        const filteredStocks = stockList.filter(stock => (stock.ticker.includes(queryUpperCase) || stock.name.toUpperCase().includes(queryUpperCase)) && stockIndex[stock.ticker]);
 
         // Responde com as ações filtradas
         res.status(200).json({ data: filteredStocks });

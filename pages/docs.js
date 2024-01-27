@@ -58,7 +58,7 @@ const Docs = () => {
               </div>
 
               <p className="lead">
-                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, recomendamos que você leia nossos{' '}
+                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, você deve seguir nossos{' '}
                 <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>
                 . A BrInvestAPI fornece dados do mercado de ações brasileiro e não requer autenticação para acesso.
               </p>

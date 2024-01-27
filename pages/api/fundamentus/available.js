@@ -1,30 +1,39 @@
 import axios from 'axios';
+import iconv from 'iconv-lite';
 
-export default async (request, response) => {
+export default async function handler(req, res) {
   try {
-    let URL = process.env.URL
-    //Envia o request
-    const listResponse = await axios.get(`${URL}/api/fundamentus/result`);
-    //Salva os dados
-    const data = listResponse.data.data;
+    const response = await axios.get('https://www.fundamentus.com.br/script/cmplte.php', {
+      responseType: 'arraybuffer',
+    });
 
-    //Cache da Vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('Cache-Control', 'max-age=21600')
+    const html = iconv.decode(response.data, 'iso-8859-1');
+    const match = html.match(/var tokens = (\[.*?\]);/s);
 
-    if (data) {
-      //Separa somente os nomes
-      const listaAtivos = Object.keys(data);
-      //Retorna a lita em json
-      return response.status(200).json({ data: listaAtivos });
+    if (match && match[1]) {
+      const rawData = match[1].trim();
+
+      const cleanedData = rawData.replace(/\[|\]/g, '').replace(/'/g, '"');
+
+      const dataArray = cleanedData.split(',"').reduce((acc, entry, index, array) => {
+        if (index % 1 === 0) {
+          let [ticker, name] = entry.trim().split('", "').map(item => item.replace(/"/g, '').replace(/^ - /, ''));
+      
+          if (index === 0) {
+            ticker = ticker.replace(/\s/g, '');
+          }
+      
+          acc.push({ ticker, name });
+        }
+        return acc;
+      }, []);      
+
+      res.status(200).json({ data: dataArray });
     } else {
-      //Trata possiveis erros
-      return response.status(404).json({ error: 'Unable to retrieve the list of assets.' });
+      res.status(500).json({ error: 'Padrão não encontrado na resposta' });
     }
   } catch (error) {
-    //Trata possiveis erros
-    console.error(error)
-    response.status(500).json({ error: `Internal Server Error` });
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao processar a requisição' });
   }
-};
+}

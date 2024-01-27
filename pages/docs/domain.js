@@ -40,7 +40,7 @@ const DomainInfo = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="list-group">
-              <Link href="/docs" passHref className={`list-group-item list-group-item-action ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
+              <Link href="/docs" passHref className={`list-group-item list-group-item-action  ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
               <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>Introdução</Link>
               <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>Informações sobre o Domínio</Link>
               <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>Endpoints</Link>
@@ -57,15 +57,12 @@ const DomainInfo = () => {
 
               <div className="mt-5">
                 <h2 className="text-center mb-4">Domínio Atual: <span className="text-primary">https://www.brinvestapi.pt</span></h2>
-                <p>
-                  O domínio atual, <strong>https://www.brinvestapi.pt</strong>, é fornecido gratuitamente e tem uma duração de 1 ano. Recomendamos o seu uso para projetos de curto prazo. No entanto, para projetos de longo prazo, é altamente recomendado usar o domínio fornecido pela Vercel para garantir estabilidade contínua.
-                </p>
-                <p>
-                  Recomendamos o uso do domínio <strong>https://brinvestapi.vercel.app/</strong> para projetos de longo prazo. Este domínio é fornecido pela Vercel.
-                </p>
-                <p>
-                  Ao optar pelo domínio da Vercel, você evita possíveis problemas relacionados a mudanças de domínio e desfruta de uma experiência mais consistente para seus usuários.
-                </p>
+                <h5>
+                  O domínio atual, <strong>brinvestapi.pt</strong>, é fornecido gratuitamente e tem uma duração de 1 ano. Recomendamos usar o domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
+                </h5>
+                <h5>
+                  O domínio fornecido pela <a href='https://vercel.com'>Vercel</a> é <strong>https://brinvestapi.vercel.app/</strong>
+                </h5>
               </div>
             </div>
           </div>

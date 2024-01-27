@@ -50,12 +50,6 @@ const Endpoints = () => {
                     <div className="col-md-9">
                         <div className="bg-light p-5 rounded shadow">
                             <h1 className="display-4 text-center mb-4">Endpoints da BrInvestAPI</h1>
-                            <div className="mt-5 alert alert-info" role="alert">
-                                <h2 className="text-center mb-4">Dica de Domínio</h2>
-                                <p>
-                                    Considere utilizar o domínio fornecido pela Vercel para maior estabilidade contínua em seus projetos. O domínio sugerido é: <code>https://brinvestapi.vercel.app/</code>. Saiba mais <Link href="/docs/domain" passHref>clique aqui</Link>.
-                                </p>
-                            </div>
                             <div className="endpoint-section">
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
@@ -63,9 +57,6 @@ const Endpoints = () => {
                                 </p>
                                 <p>
                                     <strong>Informações sobre os fundamentos da empresa:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
-                                </p>
-                                <p>
-                                    <strong>Retornar todos os dados:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/result</code>
                                 </p>
                                 <p>
                                     <strong>Pesquisar por ticker:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
@@ -79,7 +70,7 @@ const Endpoints = () => {
                                         </li>
                                         <li>
                                             <Link href="https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR" passHref target="_blank">https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR</Link>
-                                            - Pesquisa por "PETR" retornando resultados.
+                                            - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar. 
                                         </li>
                                     </ul>
                                 </div>
