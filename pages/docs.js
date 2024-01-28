@@ -21,8 +21,8 @@ const Docs = () => {
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.brinvestapi.me/docs/introduction',
-          site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          url: 'https://www.brinvestapi.me/docs',
+          site_name: 'BrInvestAPI - Documentação',
           images: [
             {
               url: 'https://www.brinvestapi.me/BrInvestAPI.png',
@@ -31,8 +31,23 @@ const Docs = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
+          title: "BrInvestAPI - Documentação",
+          description: "Explore a documentação completa dos da BrInvestAPI para acessar dados financeiros brasileiros em tempo real."
         }}
-        canonical="https://www.brinvestapi.me/docs/introduction"
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+        ]}
+        canonical="https://www.brinvestapi.me/docs"
       />
       <Navbar />
 

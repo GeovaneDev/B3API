@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -8,7 +9,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link href="/" passHref className="navbar-brand d-flex align-items-center">
-          <img src="/BrInvestAPI.png" alt="BrInvestAPI Icon" style={{ width: '40px', height: '40px', marginRight: '10px' }} />
+          <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={40} height={40} />
           <span className="fw-bold">BrInvestAPI</span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

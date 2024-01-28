@@ -3,6 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -25,17 +26,32 @@ const Home = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
+          title: 'API B3: BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          description: 'Descubra a API B3 líder no mercado, BrInvestAPI. Fornece dados confiáveis e em tempo real sobre ações, cotações, índices e informações essenciais para o mercado financeiro do Brasil.',
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+        ]}
         canonical="https://www.brinvestapi.me/"
       />
       <Navbar />
 
       <div className="container mt-5">
         <div className="bg-light p-5 rounded shadow text-center">
-          <img src="/BrInvestAPI.png" alt="BrInvestAPI Icon" style={{ width: '140px', height: '140px', marginBottom: '20px' }} />
+          <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={140} height={140} />
           <h1 className="display-4 mb-4">BrInvestAPI</h1>
           <p className="lead">
-          Dados confiáveis e em tempo real sobre ações, cotações, índices do mercado financeiro do Brasil.
+            Dados confiáveis e em tempo real sobre ações, cotações, índices do mercado financeiro do Brasil.
           </p>
           <Link href="/docs" passHref className="btn btn-primary btn-lg mt-3">Começar Agora</Link>
         </div>

@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         const isTicketAvailable = stockList.some(stock => stock.ticker === ticket);
 
         if (!isTicketAvailable) {
-            return res.status(400).json({ error: 'Ticket not found in the available list. Go to ${URL}/api/fundamentus/available' });
+            return res.status(400).json({ error: `Ticket not found in the available list. Go to ${URL}/api/fundamentus/available` });
         }
 
         const { data: response } = await axios.get(`https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`, {

@@ -21,8 +21,8 @@ const Endpoints = () => {
                 openGraph={{
                     type: 'website',
                     locale: 'pt_BR',
-                    url: 'https://www.brinvestapi.me/docs',
-                    site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+                    url: 'https://www.brinvestapi.me/docs/endpoints',
+                    site_name: 'BrInvestAPI - Documentação dos Endpoints',
                     images: [
                         {
                             url: 'https://www.brinvestapi.me/BrInvestAPI.png',
@@ -31,9 +31,25 @@ const Endpoints = () => {
                             alt: 'BrInvestAPI Icon',
                         },
                     ],
+                    title: "BrInvestAPI - Documentação dos Endpoints",
+                    description: "Explore a documentação completa dos endpoints da BrInvestAPI para acessar dados financeiros brasileiros em tempo real."
                 }}
-                canonical="https://www.brinvestapi.me/docs"
+                twitter={{
+                    cardType: 'summary_large_image',
+                }}
+                additionalMetaTags={[
+                    {
+                        name: 'viewport',
+                        content: 'width=device-width, initial-scale=1.0',
+                    },
+                    {
+                        name: 'robots',
+                        content: 'index, follow',
+                    },
+                ]}
+                canonical="https://www.brinvestapi.me/docs/endpoints"
             />
+
             <Navbar />
 
             <div className="container mt-5">
@@ -70,7 +86,7 @@ const Endpoints = () => {
                                         </li>
                                         <li>
                                             <Link href="https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR" passHref target="_blank">https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR</Link>
-                                            - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar. 
+                                            - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar.
                                         </li>
                                     </ul>
                                 </div>

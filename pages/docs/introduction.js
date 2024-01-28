@@ -16,13 +16,13 @@ const Introduction = () => {
   return (
     <div>
       <DefaultSeo
-        title="BrInvestAPI - Introdução"
+        title="BrInvestAPI - Introdução da documentação"
         description="Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
           url: 'https://www.brinvestapi.me/docs/introduction',
-          site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          site_name: 'BrInvestAPI - Introdução da documentação',
           images: [
             {
               url: 'https://www.brinvestapi.me/BrInvestAPI.png',
@@ -31,7 +31,22 @@ const Introduction = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
+          title: "BrInvestAPI - Introdução da documentação",
+          description: "Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo."
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+        ]}
         canonical="https://www.brinvestapi.me/docs/introduction"
       />
       <Navbar />

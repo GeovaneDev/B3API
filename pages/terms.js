@@ -8,13 +8,13 @@ const TermsOfService = () => {
   return (
     <div>
       <DefaultSeo
-        title="BrInvestAPI - Termos de Serviço"
+        title="BrInvestAPI - Termos de Uso"
         description="Leia os Termos de Serviço da BrInvestAPI para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
           url: 'https://www.brinvestapi.me/terms',
-          site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          site_name: 'BrInvestAPI - Termos de Uso',
           images: [
             {
               url: 'https://www.brinvestapi.me/BrInvestAPI.png',
@@ -23,7 +23,22 @@ const TermsOfService = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
+          title: "BrInvestAPI - Termos de Uso",
+          description: "Leia os Termos de Serviço da BrInvestAPI para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+        ]}
         canonical="https://www.brinvestapi.me/terms"
       />
       <Navbar />
