@@ -3,7 +3,7 @@ import iconv from 'iconv-lite';
 
 export default async function handler(req, res) {
   try {
-    const response = await axios.get('https://www.fundamentus.com.br/script/cmplte.php', {
+    const response = await axios.post('https://www.fundamentus.com.br/script/cmplte.php', {
       responseType: 'arraybuffer',
     });
 

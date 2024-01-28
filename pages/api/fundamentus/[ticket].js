@@ -22,16 +22,20 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: `Ticket not found in the available list. Go to ${URL}/api/fundamentus/available` });
         }
 
-        const { data: response } = await axios.get(`https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`, {
-            responseType: 'arraybuffer',
-            headers: {
-                'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201',
-                'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-            },
-        });
+        const response = await axios.post(
+            `https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`,
+            {},
+            {
+                responseType: 'arraybuffer',
+                headers: {
+                    'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201',
+                    'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                },
+            }
+        );
 
-        const decodedResponse = iconv.decode(Buffer.from(response), 'latin1');
+        const decodedResponse = iconv.decode(Buffer.from(response.data), 'latin1');
 
         const $ = cheerio.load(decodedResponse, { decodeEntities: false });
 
