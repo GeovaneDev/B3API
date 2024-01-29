@@ -16,8 +16,8 @@ const NotFoundPage = () => {
               src="/404.png"
               alt="404 Not Found"
               className="img-fluid"
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
             />
             <h2>Página não encontrada</h2>
             <p className="lead">

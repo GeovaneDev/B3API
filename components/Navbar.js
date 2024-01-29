@@ -9,9 +9,9 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link href="/" passHref className="navbar-brand d-flex align-items-center">
-          <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={40} height={40} />
-          <span className="fw-bold">BrInvestAPI</span>
-        </Link>
+            <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={50} height={50} />
+            <span className="fw-bold">BrInvestAPI</span>
+          </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </li>
           </ul>

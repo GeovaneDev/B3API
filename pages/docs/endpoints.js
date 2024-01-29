@@ -75,6 +75,9 @@ const Endpoints = () => {
                                     <strong>Informações sobre os fundamentos da empresa:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                                 </p>
                                 <p>
+                                    <strong>Dados de divivendos como porcentagem e valor nos últimos 12 meses:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/dividend?ticket=[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
+                                </p>
+                                <p>
                                     <strong>Pesquisar por ticker:</strong> [GET/POST] <code>https://brinvestapi.vercel.app/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
                                 </p>
                                 <div className="mt-3">

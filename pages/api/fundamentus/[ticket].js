@@ -22,6 +22,10 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: `Ticket not found in the available list. Go to ${URL}/api/fundamentus/available` });
         }
 
+        // Faz a requisição para obter os dados de dividendos da nova API
+        const dividendResponse = await axios.get(`${URL}/api/fundamentus/dividend?ticket=${ticket}`);
+        const dividendData = dividendResponse.data;
+
         const response = await axios.post(
             `https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`,
             {},
@@ -45,9 +49,6 @@ export default async function handler(req, res) {
             papel: removeNewLines($('table:nth-child(2) tr:nth-child(1) td:nth-child(2)').text()),
             tipo: removeNewLines($('table:nth-child(2) tr:nth-child(2) td:nth-child(2)').text()),
             empresa: removeNewLines($('table:nth-child(2) tr:nth-child(3) td:nth-child(2)').text()),
-            papel: removeNewLines($('table:nth-child(2) tr:nth-child(1) td:nth-child(2)').text()),
-            tipo: removeNewLines($('table:nth-child(2) tr:nth-child(2) td:nth-child(2)').text()),
-            empresa: removeNewLines($('table:nth-child(2) tr:nth-child(3) td:nth-child(2)').text()),
             setor: removeNewLines($('table:nth-child(2) tr:nth-child(4) td:nth-child(2)').text()),
             subsetor: removeNewLines($('table:nth-child(2) tr:nth-child(5) td:nth-child(2)').text()),
             cotacao: removeNewLines($('table:nth-child(2) tr:nth-child(1) td:nth-child(4)').text()),
@@ -66,7 +67,8 @@ export default async function handler(req, res) {
             p_ativos: removeNewLines($('table:nth-child(4) tr:nth-child(6) td:nth-child(4)').text()),
             p_cap_giro: removeNewLines($('table:nth-child(4) tr:nth-child(7) td:nth-child(4)').text()),
             p_ativ_circ_liq: removeNewLines($('table:nth-child(4) tr:nth-child(8) td:nth-child(4)').text()),
-            div_yield: removeNewLines($('table:nth-child(4) tr:nth-child(9) td:nth-child(4)').text()),
+            div_yield: dividendData.dividendYield.porcentage,
+            div_yield_value_12_meses: dividendData.dividendYield.value12month,
             evebitda: removeNewLines($('table:nth-child(4) tr:nth-child(10) td:nth-child(4)').text()),
             evebit: removeNewLines($('table:nth-child(4) tr:nth-child(11) td:nth-child(4)').text()),
             cres_rec_5a: removeNewLines($('table:nth-child(4) tr:nth-child(12) td:nth-child(4)').text()),
