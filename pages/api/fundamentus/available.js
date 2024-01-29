@@ -3,6 +3,7 @@ import iconv from 'iconv-lite';
 
 export default async function handler(req, res) {
   try {
+    //Envia o request
     const response = await axios.post(
       `https://www.fundamentus.com.br/script/cmplte.php`,
       {},
@@ -16,9 +17,11 @@ export default async function handler(req, res) {
       }
   );
 
+  //Trata os dados em utf-8
     const html = iconv.decode(response.data, 'iso-8859-1');
     const match = html.match(/var tokens = (\[.*?\]);/s);
 
+    //Corrige e organiza os dados
     if (match && match[1]) {
       const rawData = match[1].trim();
 
@@ -37,12 +40,15 @@ export default async function handler(req, res) {
         return acc;
       }, []);      
 
+      //Responde com os dados
       res.status(200).json({ data: dataArray });
     } else {
-      res.status(500).json({ error: 'Padrão não encontrado na resposta' });
+      //Trata erros
+      res.status(500).json({ error: 'Internal server error 1000' });
     }
   } catch (error) {
+    //Trata erros
     console.error(error);
-    res.status(500).json({ error: 'Erro ao processar a requisição' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 }

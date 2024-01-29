@@ -5,7 +5,13 @@ import iconv from 'iconv-lite';
 export default async function handler(req, res) {
   const { ticket } = req.query;
 
+  //Evita do ticket estar vazio
+  if (!ticket) {
+    return res.status(400).json({ error: 'Ticket parameter is required' });
+  }
+
   try {
+    //Envia o request
     const response = await axios.get(`https://statusinvest.com.br/acoes/${ticket}`, {
       responseType: 'arraybuffer',
       headers: {
@@ -15,14 +21,18 @@ export default async function handler(req, res) {
       },
     });
 
+    //Usa o utf-8
     const html = iconv.decode(response.data, 'iso-8859-1');
     const $ = cheerio.load(html);
 
+    //Puxa os dados
     const dividendYieldValue = $('.value').eq(3).text().trim();
     const dividendYield12mes = $('.sub-value').eq(3).text().trim();
 
+    //Adiciona a porcentagem
     const dividendYieldValueWithPercentage = dividendYieldValue + '%';
 
+    //Responde com um json
     res.status(200).json({
       dividendYield: {
         porcentage: dividendYieldValueWithPercentage,
@@ -31,6 +41,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
+    //Trata os error
     console.error('Erro ao obter dados:', error);
     res.status(500).json({ error: 'Erro ao obter dados' });
   }
