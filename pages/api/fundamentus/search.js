@@ -4,13 +4,15 @@ import axios from 'axios';
 export default async (req, res) => {
     try {
         // Obtém a URL da API do ambiente
-        let URL = process.env.URL;
+        const URL = process.env.URL;
 
-        // Faz uma solicitação para obter a lista de ações disponíveis
-        const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
+        // Faz solicitações em paralelo para obter a lista de ações disponíveis e a consulta da requisição
+        const [availableStocksResponse, { query }] = await Promise.all([
+            axios.get(`${URL}/api/fundamentus/available`),
+            req.query
+        ]);
 
-        // Obtém a consulta da requisição
-        const { query } = req.query;
+        const stockList = availableStocksResponse.data.data;
 
         // Verifica se a consulta está presente
         if (!query) {
@@ -21,19 +23,20 @@ export default async (req, res) => {
         const queryUpperCase = query.toUpperCase();
 
         // Cria um índice de ações para otimizar a filtragem
-        const stockIndex = stockList.reduce((index, stock) => {
-            index[stock.ticker] = true;
-            return index;
-        }, {});
+        const stockIndex = {};
+        for (const stock of stockList) {
+            stockIndex[stock.ticker] = true;
+        }
 
         // Filtra as ações com base na consulta e no índice
-        const filteredStocks = stockList.filter(stock => (stock.ticker.includes(queryUpperCase) || stock.name.toUpperCase().includes(queryUpperCase)) && stockIndex[stock.ticker]);
+        const filteredStocks = stockList.filter(stock => 
+            (stock.ticker.includes(queryUpperCase) || stock.name.toUpperCase().includes(queryUpperCase)) && stockIndex[stock.ticker]
+        );
 
         // Responde com as ações filtradas
         res.status(200).json({ data: filteredStocks });
     } catch (error) {
         // Trata erros durante a execução da função
-
         console.error('Error searching stocks:', error);
 
         // Verifica o tipo de erro e responde adequadamente

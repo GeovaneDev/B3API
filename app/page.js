@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
