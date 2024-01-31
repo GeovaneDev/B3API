@@ -38,7 +38,12 @@ export default async function handler(req, res) {
           acc.push({ ticker, name });
         }
         return acc;
-      }, []);      
+      }, []);
+
+      // Cache da Vercel
+      res.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+      res.setHeader('CDN-Cache-Control', 'max-age=21600');
+      res.setHeader('Cache-Control', 'max-age=21600');
 
       //Responde com os dados
       res.status(200).json({ data: dataArray });

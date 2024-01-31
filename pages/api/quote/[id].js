@@ -54,6 +54,11 @@ async function quote(request, response) {
       ...restData,
     };
 
+    // Cache da Vercel
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=10800');
+    response.setHeader('CDN-Cache-Control', 'max-age=10800');
+    response.setHeader('Cache-Control', 'max-age=10800');
+
     // Responde com os dados simplificados
     return response.status(200).json(simplifiedData);
   } catch (error) {

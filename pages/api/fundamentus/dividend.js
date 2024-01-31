@@ -5,6 +5,11 @@ import iconv from 'iconv-lite';
 export default async function handler(req, res) {
   const { ticket } = req.query;
 
+  // Cache da Vercel
+  res.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
+  res.setHeader('CDN-Cache-Control', 'max-age=21600');
+  res.setHeader('Cache-Control', 'max-age=21600');
+
   //Evita do ticket estar vazio
   if (!ticket) {
     return res.status(400).json({ error: 'Ticket parameter is required' });

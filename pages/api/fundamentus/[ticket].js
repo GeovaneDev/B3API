@@ -9,6 +9,11 @@ export default async function handler(req, res) {
         // Obtém a URL da API do ambiente
         let URL = process.env.URL;
 
+        // Cache da Vercel
+        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=10800');
+        res.setHeader('CDN-Cache-Control', 'max-age=10800');
+        res.setHeader('Cache-Control', 'max-age=10800');
+
         // Faz uma solicitação para obter a lista de ações disponíveis
         const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
 
