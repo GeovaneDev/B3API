@@ -2,7 +2,7 @@
 
 ![BrInvestidor](https://github.com/GeovaneDev/BrInvestAPI/assets/87013843/dbcde03e-298f-4e78-831f-2b9fa3e8c6c3)
 
-Bem-vindo ao repositório da BrInvestAPI - sua fonte para dados em tempo real do mercado de ações brasileiro.
+[https://www.brinvestapi.me/](https://www.brinvestapi.me/) - sua fonte para dados em tempo real do mercado de ações brasileiro.
 
 ## Sobre
 
