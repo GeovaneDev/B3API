@@ -15,9 +15,11 @@ async function quote(request, response) {
     const availableStocksResponse = await axios.get(availableStocksUrl);
     const availableStocks = availableStocksResponse.data.available;
 
-    // Verifica se a ação está na lista de ações disponíveis
-    if (!availableStocks.includes(id.toUpperCase())) {
-      return response.status(404).json({ error: `Stock not found. Go to ${process.env.URL}/api/quote/available` });
+    // Verifica se o ID é uma string e se a ação está na lista de ações disponíveis
+    if (typeof id !== 'string' || !availableStocks.includes(id.toUpperCase())) {
+      return response.status(400).json({
+        error: 'Invalid input. Stock ID must be a string and should be in the available stocks list.',
+      });
     }
 
     // Constroi a URL da API

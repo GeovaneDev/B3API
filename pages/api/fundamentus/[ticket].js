@@ -17,6 +17,11 @@ export default async function handler(req, res) {
         // Faz uma solicitação para obter a lista de ações disponíveis
         const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
 
+        // Verifica se o ticket fornecido é uma string
+        if (typeof ticket !== 'string') {
+            return res.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
+        }
+
         // Converte o ticket para maiúsculas
         ticket = ticket.toUpperCase();
 
