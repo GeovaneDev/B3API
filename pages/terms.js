@@ -38,6 +38,30 @@ const TermsOfService = () => {
             name: 'robots',
             content: 'index, follow',
           },
+          {
+            name: 'Strict-Transport-Security',
+            content: 'max-age=63072000; includeSubdomains; preload',
+          },
+          {
+            name: 'X-Content-Type-Options',
+            content: 'nosniff',
+          },
+          {
+            name: 'X-Frame-Options',
+            content: 'DENY',
+          },
+          {
+            name: 'X-XSS-Protection',
+            content: '1; mode=block',
+          },
+          {
+            name: 'Referrer-Policy',
+            content: 'same-origin',
+          },
+          {
+            name: 'Set-Cookie',
+            content: 'HttpOnly; Secure; SameSite=Strict',
+          }
         ]}
         canonical="https://www.brinvestapi.me/terms"
       />

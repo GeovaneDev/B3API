@@ -16,8 +16,11 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Converte o ticket para maiúsculas e codifica para URL
+    const encodedTicket = encodeURIComponent(ticket.toUpperCase());
+
     //Envia o request
-    const response = await axios.get(`https://statusinvest.com.br/acoes/${ticket}`, {
+    const response = await axios.get(`https://statusinvest.com.br/acoes/${encodedTicket}`, {
       responseType: 'arraybuffer',
       headers: {
         'User-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0',
@@ -46,7 +49,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    //Trata os error
+    //Trata os erros
     console.error('Erro ao obter dados:', error);
     res.status(500).json({ error: 'Erro ao obter dados' });
   }
