@@ -45,21 +45,30 @@ const TermsOfService = () => {
 
       <div className="container mt-5">
         <div className="bg-light p-5 rounded shadow">
-          <h1 className="display-5 mb-4">Termos de Serviço</h1>
+          <h1 className="display-5 mb-4 text-center">Termos de Serviço</h1>
 
           <div className="alert alert-info" role="alert">
-          Este é um projeto sem fins lucrativos e um hobby do desenvolvedor <a href="https://github.com/GeovaneDev" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">GeovaneDev</a>. Nosso objetivo é disponibilizar dados gratuitamente sobre o mercado financeiro brasileiro. Não buscamos lucro com a API. Portanto, pode ocorrer a mudança de domínio a cada 1 ano para garantir a continuidade deste serviço de forma sustentável.
+            Este é um projeto sem fins lucrativos e um hobby do desenvolvedor{' '}
+            <a
+              href="https://github.com/GeovaneDev"
+              className="fw-bold text-decoration-none"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GeovaneDev
+            </a>
+            . Nosso objetivo é disponibilizar dados gratuitamente sobre o mercado financeiro brasileiro. Não buscamos lucro com a API. Portanto, pode ocorrer a mudança de domínio a cada 1 ano para garantir a continuidade deste serviço de forma sustentável.
           </div>
 
           <div className="mt-4">
-            <h2 className="text-center mb-4">1. Aceitação dos Termos</h2>
+            <h2 className="mb-4">1. Aceitação dos Termos</h2>
             <p className="lead">
               Ao acessar e utilizar o BrInvestAPI, você expressa seu consentimento e concordância com os presentes Termos de Serviço, assim como com todos os termos e políticas incorporados por referência. Se por acaso você não concordar com qualquer um destes termos, solicitamos que não utilize o serviço.
             </p>
           </div>
 
           <div className="mt-4">
-            <h2 className="text-center mb-4">2. Uso Responsável</h2>
+            <h2 className="mb-4">2. Uso Responsável</h2>
             <p className="lead">
               Ao utilizar o BrInvestAPI, você compromete-se a fazê-lo de maneira responsável e ética. O abuso do serviço, incluindo práticas como sobrecarga excessiva de solicitações, não é permitido e pode resultar na suspensão do acesso.
             </p>

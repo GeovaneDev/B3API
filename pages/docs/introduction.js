@@ -1,28 +1,22 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import DocsMenu from '../../components/DocsMenu';
 
 const Introduction = () => {
-  const pathname = usePathname();
-
-  const isCurrentPage = (page) => {
-    return pathname === `/docs${page}`;
-  };
-
   return (
     <div>
       <DefaultSeo
-        title="BrInvestAPI - Introdução da documentação"
-        description="Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo."
+        title="BrInvestAPI - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro"
+        description="Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
           url: 'https://www.brinvestapi.me/docs/introduction',
-          site_name: 'BrInvestAPI - Introdução da documentação',
+          site_name: 'BrInvestAPI - Introdução da Documentação',
           images: [
             {
               url: 'https://www.brinvestapi.me/BrInvestAPI.png',
@@ -31,8 +25,8 @@ const Introduction = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
-          title: "BrInvestAPI - Introdução da documentação",
-          description: "Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo."
+          title: "BrInvestAPI - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro",
+          description: "Descubra a BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas.",
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -53,21 +47,14 @@ const Introduction = () => {
 
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-3">
-            <div className="list-group">
-              <Link href="/docs" passHref className={`list-group-item list-group-item-action ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
-              <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>Introdução</Link>
-              <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>Informações sobre o Domínio</Link>
-              <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>Endpoints</Link>
-            </div>
-          </div>
+          <DocsMenu />
 
           <div className="col-md-9">
             <div className="bg-light p-5 rounded shadow">
               <h1 className="display-4 text-center mb-4">Introdução à BrInvestAPI</h1>
 
               <p className="lead">
-                Bem-vindo à BrInvestAPI, sua fonte para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras, confira abaixo:
+                Bem-vindo à BrInvestAPI, sua fonte para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras. Confira abaixo:
               </p>
 
               <div className="row mt-5">
@@ -100,7 +87,7 @@ const Introduction = () => {
                     <div className="card-body text-center">
                       <h2 className="h3 mb-4">Dados de Ações</h2>
                       <p className="card-text">
-                        Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço BrAPI para manter você informado sobre as últimas mudanças no mercado de ações brasileiro.
+                        Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço BrAPI para mantê-lo informado sobre as últimas mudanças no mercado de ações brasileiro.
                       </p>
                       <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
                     </div>

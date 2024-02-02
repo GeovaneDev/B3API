@@ -5,19 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import DocsMenu from '../components/DocsMenu';
 
 const Docs = () => {
-  const pathname = usePathname();
-
-  const isCurrentPage = (page) => {
-    return pathname === `/docs${page}`;
-  };
-
   return (
     <div>
       <DefaultSeo
-        title="BrInvestAPI - Documentação"
-        description="Explore a documentação completa dos da BrInvestAPI para acessar dados financeiros brasileiros em tempo real."
+        title="BrInvestAPI - Documentação | Acesse Dados Financeiros Brasileiros em Tempo Real"
+        description="Explore a documentação completa da BrInvestAPI para acessar dados financeiros brasileiros em tempo real. Descubra como integrar e utilizar nossos serviços de forma eficiente e confiável."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
@@ -31,8 +26,8 @@ const Docs = () => {
               alt: 'BrInvestAPI Icon',
             },
           ],
-          title: "BrInvestAPI - Documentação",
-          description: "Explore a documentação completa dos da BrInvestAPI para acessar dados financeiros brasileiros em tempo real."
+          title: "BrInvestAPI - Documentação | Acesse Dados Financeiros Brasileiros em Tempo Real",
+          description: "Explore a documentação completa da BrInvestAPI para acessar dados financeiros brasileiros em tempo real. Descubra como integrar e utilizar nossos serviços de forma eficiente e confiável.",
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -53,29 +48,22 @@ const Docs = () => {
 
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-3">
-            <div className="list-group">
-              <Link href="/docs" passHref className={`list-group-item list-group-item-action ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
-              <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>Introdução</Link>
-              <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>Informações sobre o Domínio</Link>
-              <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>Endpoints</Link>
-            </div>
-          </div>
+          <DocsMenu />
 
           <div className="col-md-9">
             <div className="bg-light p-5 rounded shadow">
               <h1 className="display-4 text-center mb-4">Documentação da API</h1>
 
               <div className="alert alert-warning" role="alert">
-                A BrInvestAPI está em desenvolvimento. Se encontrar bugs ou tiver sugestões, por favor, reporte-os em nossos{' '}
+                A BrInvestAPI está em constante desenvolvimento. Caso encontre bugs ou tenha sugestões, por favor, relate-os em nossos{' '}
                 <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none">Issues no GitHub</a>
                 .
               </div>
 
               <p className="lead">
-                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, você deve seguir nossos{' '}
+                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
                 <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>
-                . A BrInvestAPI fornece dados do mercado de ações brasileiro e não requer autenticação para acesso.
+                . A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
               </p>
 
               <div className="border-top mt-4 pt-4">
@@ -89,7 +77,7 @@ const Docs = () => {
                 <h2 className="mb-4">
                   <Link href="/docs/domain" passHref className="text-decoration-none text-dark">Informações sobre o Domínio</Link>
                 </h2>
-                <p className="text-muted">Leia sobre o domínio que usamos para evitar problemas.</p>
+                <p className="text-muted">Leia sobre o domínio que utilizamos para evitar problemas.</p>
               </div>
 
               <div className="border-top mt-4 pt-4">

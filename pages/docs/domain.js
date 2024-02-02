@@ -1,23 +1,17 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import DocsMenu from '../../components/DocsMenu';
 
 const DomainInfo = () => {
-  const pathname = usePathname();
-
-  const isCurrentPage = (page) => {
-    return pathname === `/docs${page}`;
-  };
-
   return (
     <div>
       <DefaultSeo
         title="BrInvestAPI - Informações sobre o Domínio"
-        description="Explore informações sobre o domínio da BrInvestAPI e saiba por que recomendamos o uso do domínio da Vercel para garantir estabilidade e consistência."
+        description="Descubra detalhes sobre o domínio BrInvestAPI e por que recomendamos a estabilidade e consistência oferecidas pelo domínio Vercel."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
@@ -32,7 +26,7 @@ const DomainInfo = () => {
             },
           ],
           title: "BrInvestAPI - Informações sobre o Domínio",
-          description: "Explore informações sobre o domínio da BrInvestAPI e saiba por que recomendamos o uso do domínio da Vercel para garantir estabilidade e consistência."
+          description: "Explore o domínio da BrInvestAPI e saiba por que recomendamos a estabilidade da Vercel para garantir consistência.",
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -53,31 +47,26 @@ const DomainInfo = () => {
 
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-3">
-            <div className="list-group">
-              <Link href="/docs" passHref className={`list-group-item list-group-item-action  ${isCurrentPage('') ? 'active' : ''}`}>Documentação</Link>
-              <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>Introdução</Link>
-              <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>Informações sobre o Domínio</Link>
-              <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>Endpoints</Link>
-            </div>
-          </div>
+          <DocsMenu />
 
           <div className="col-md-9">
             <div className="bg-light p-5 rounded shadow">
               <h1 className="display-4 text-center mb-4">Informações sobre o Domínio da BrInvestAPI</h1>
 
-              <p className="lead">
+              <p className="lead text-center">
                 A estabilidade e consistência do domínio são essenciais para garantir uma experiência confiável ao usar a BrInvestAPI.
               </p>
 
               <div className="mt-5">
-                <h2 className="text-center mb-4">Domínio Atual: <span className="text-primary">https://www.brinvestapi.me</span></h2>
-                <h5>
-                  O domínio atual, <strong>brinvestapi.me</strong>, é fornecido gratuitamente e tem uma duração de 1 ano. Recomendamos usar o domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
-                </h5>
-                <h5>
-                  O domínio fornecido pela <a href='https://vercel.com'>Vercel</a> é <strong>https://brinvestapi.vercel.app/</strong>
-                </h5>
+                <h2 className="text-center mb-4">Domínio Atual</h2>
+                <p className="text-center">
+                  O domínio atual é <strong>brinvestapi.me</strong> e é fornecido gratuitamente, com uma duração de 1 ano. No entanto, recomendamos fortemente o uso do domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
+                </p>
+
+                <div className="text-center">
+                  <h5>Domínio Vercel Recomendado</h5>
+                  <p>O domínio fornecido pela <a href='https://vercel.com'>Vercel</a> é <strong>https://brinvestapi.vercel.app/</strong>.</p>
+                </div>
               </div>
             </div>
           </div>
