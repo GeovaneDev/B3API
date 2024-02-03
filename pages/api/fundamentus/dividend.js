@@ -6,9 +6,9 @@ export default async function handler(req, res) {
   const { ticket } = req.query;
 
   // Cache da Vercel
-  res.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-  res.setHeader('CDN-Cache-Control', 'max-age=21600');
-  res.setHeader('Cache-Control', 'max-age=21600');
+  res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+  res.setHeader('CDN-Cache-Control', 'max-age=86400');
+  res.setHeader('Cache-Control', 'max-age=86400');
 
   //Evita do ticket estar vazio
   if (!ticket) {

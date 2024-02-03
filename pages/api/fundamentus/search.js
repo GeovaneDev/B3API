@@ -7,9 +7,9 @@ export default async (req, res) => {
         const URL = process.env.URL;
 
         // Cache da Vercel
-        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-        res.setHeader('CDN-Cache-Control', 'max-age=21600');
-        res.setHeader('Cache-Control', 'max-age=21600');
+        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        res.setHeader('CDN-Cache-Control', 'max-age=86400');
+        res.setHeader('Cache-Control', 'max-age=86400');
 
         // Faz solicitações em paralelo para obter a lista de ações disponíveis e a consulta da requisição
         const [availableStocksResponse, { query }] = await Promise.all([

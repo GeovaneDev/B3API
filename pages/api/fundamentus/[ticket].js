@@ -10,9 +10,9 @@ export default async function handler(req, res) {
         let URL = process.env.URL;
 
         // Cache da Vercel
-        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=10800');
-        res.setHeader('CDN-Cache-Control', 'max-age=10800');
-        res.setHeader('Cache-Control', 'max-age=10800');
+        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        res.setHeader('CDN-Cache-Control', 'max-age=86400');
+        res.setHeader('Cache-Control', 'max-age=86400');
 
         // Faz uma solicitação para obter a lista de ações disponíveis
         const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);

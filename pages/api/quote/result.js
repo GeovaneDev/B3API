@@ -9,9 +9,9 @@ export default async (request, response) => {
     const { data } = await axios.get(apiUrl);
 
     //Cache da Vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('Cache-Control', 'max-age=21600');
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+    response.setHeader('CDN-Cache-Control', 'max-age=86400');
+    response.setHeader('Cache-Control', 'max-age=86400');
 
     // Envie os dados extraídos como resposta
     response.status(200).json({ data });

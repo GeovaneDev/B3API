@@ -81,28 +81,28 @@ const Endpoints = () => {
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
                                     <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/fundamentus/available</code>
+                                    <code>https://www.brinvestapi.me/api/fundamentus/available</code>
                                 </p>
                                 <p>
                                     <strong>Informações sobre os fundamentos da empresa:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
+                                    <code>https://www.brinvestapi.me/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                                 </p>
                                 <p>
                                     <strong>Dados de dividendos como porcentagem e valor nos últimos 12 meses:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/fundamentus/dividend?ticket=[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
+                                    <code>https://www.brinvestapi.me/api/fundamentus/dividend?ticket=[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                                 </p>
                                 <p>
                                     <strong>Pesquisar por ticker:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
+                                    <code>https://www.brinvestapi.me/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
                                 </p>
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/fundamentus/PETR4" passHref target="_blank">https://brinvestapi.vercel.app/api/fundamentus/PETR4</Link> - Retorna informações sobre os fundamentos da PETR4.
+                                            <Link href="https://www.brinvestapi.me/api/fundamentus/PETR4" passHref target="_blank">https://www.brinvestapi.me/api/fundamentus/PETR4</Link> - Retorna informações sobre os fundamentos da PETR4.
                                         </li>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR" passHref target="_blank">https://brinvestapi.vercel.app/api/fundamentus/search?query=PETR</Link> - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar.
+                                            <Link href="https://www.brinvestapi.me/api/fundamentus/search?query=PETR" passHref target="_blank">https://www.brinvestapi.me/api/fundamentus/search?query=PETR</Link> - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar.
                                         </li>
                                     </ul>
                                 </div>
@@ -112,36 +112,36 @@ const Endpoints = () => {
                                 <h2 className="text-center mb-4">Quote</h2>
                                 <p>
                                     <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/available</code>
+                                    <code>https://www.brinvestapi.me/api/quote/available</code>
                                 </p>
                                 <p>
                                     <strong>Retornar o CDI e SELIC:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/taxes</code>
+                                    <code>https://www.brinvestapi.me/api/quote/taxes</code>
                                 </p>
                                 <p>
                                     <strong>Pesquisar por ticker:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como ALP para resultados como ALPA4 e ALPK3)
+                                    <code>https://www.brinvestapi.me/api/quote/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como ALP para resultados como ALPA4 e ALPK3)
                                 </p>
                                 <p>
                                     <strong>Retornar dados de uma ação específica:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/[TICKER]</code>
+                                    <code>https://www.brinvestapi.me/api/quote/[TICKER]</code>
                                 </p>
                                 <p>
                                     <strong>Retornar todos os dados disponíveis de ações:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/result</code>
+                                    <code>https://www.brinvestapi.me/api/quote/result</code>
                                 </p>
                                 <p>
                                     <strong>Pesquisar por índice ou nome da empresa:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/quote/search?query=[QUERY]</code> (substitua [QUERY] pela pesquisa de índice ou nome)
+                                    <code>https://www.brinvestapi.me/api/quote/search?query=[QUERY]</code> (substitua [QUERY] pela pesquisa de índice ou nome)
                                 </p>
                                 <div className="mt-3">
                                     <strong>Exemplos:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/quote/VALE3" passHref target="_blank">https://brinvestapi.vercel.app/api/quote/VALE3</Link> - Retorna informações sobre a ação VALE3.
+                                            <Link href="https://www.brinvestapi.me/api/quote/VALE3" passHref target="_blank">https://www.brinvestapi.me/api/quote/VALE3</Link> - Retorna informações sobre a ação VALE3.
                                         </li>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/quote/search?query=VALE" passHref target="_blank">https://brinvestapi.vercel.app/api/quote/search?query=VALE</Link> - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
+                                            <Link href="https://www.brinvestapi.me/api/quote/search?query=VALE" passHref target="_blank">https://www.brinvestapi.me/api/quote/search?query=VALE</Link> - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
                                         </li>
                                     </ul>
                                 </div>
@@ -150,13 +150,13 @@ const Endpoints = () => {
                                 <h2 className="text-center mb-4">Dados de fundamentus e Quote juntos</h2>
                                 <p>
                                     <strong>Retorna dados de fundamentus e quote juntos de uma ação:</strong> [GET/POST]{' '}
-                                    <code>https://brinvestapi.vercel.app/api/all/[TICKET]</code>
+                                    <code>https://www.brinvestapi.me/api/all/[TICKET]</code>
                                 </p>
                                 <div className="mt-3">
                                     <strong>Exemplo:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/all/VALE3" passHref target="_blank">https://brinvestapi.vercel.app/api/all/VALE3</Link> - Retorna informações sobre a ação VALE3.
+                                            <Link href="https://www.brinvestapi.me/api/all/VALE3" passHref target="_blank">https://www.brinvestapi.me/api/all/VALE3</Link> - Retorna informações sobre a ação VALE3.
                                         </li>
                                     </ul>
                                 </div>

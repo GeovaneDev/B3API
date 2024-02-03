@@ -99,13 +99,6 @@ const Docs = () => {
 
               <div className="border-top mt-4 pt-4">
                 <h2 className="mb-4">
-                  <Link href="/docs/domain" passHref className="text-decoration-none text-dark">Informações sobre o Domínio</Link>
-                </h2>
-                <p className="text-muted">Leia sobre o domínio que utilizamos para evitar problemas.</p>
-              </div>
-
-              <div className="border-top mt-4 pt-4">
-                <h2 className="mb-4">
                   <Link href="/docs/endpoints" passHref className="text-decoration-none text-dark">Endpoints</Link>
                 </h2>
                 <p className="text-muted">Lista e descrição dos endpoints disponíveis.</p>

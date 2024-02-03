@@ -41,9 +41,9 @@ export default async function handler(req, res) {
       }, []);
 
       // Cache da Vercel
-      res.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-      res.setHeader('CDN-Cache-Control', 'max-age=21600');
-      res.setHeader('Cache-Control', 'max-age=21600');
+      res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+      res.setHeader('CDN-Cache-Control', 'max-age=86400');
+      res.setHeader('Cache-Control', 'max-age=86400');
 
       //Responde com os dados
       res.status(200).json({ data: dataArray });

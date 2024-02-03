@@ -14,9 +14,9 @@ async function apiAvailable(request, response) {
         };
 
         // Cache da Vercel
-        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-        response.setHeader('CDN-Cache-Control', 'max-age=21600');
-        response.setHeader('Cache-Control', 'max-age=21600');
+        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('Cache-Control', 'max-age=86400');
 
         // Responde com a resposta em JSON
         return response.json(processedData);

@@ -7,6 +7,11 @@ export default async function handler(req, res) {
     // URL do env
     const URL = process.env.URL;
 
+    // Cache da Vercel
+    res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+    res.setHeader('CDN-Cache-Control', 'max-age=86400');
+    res.setHeader('Cache-Control', 'max-age=86400');
+
     // Obter dados da API fundamentus
     const fundamentusResponse = await axios.get(`${URL}/api/fundamentus/${ticket}`);
     const fundamentusData = fundamentusResponse.data;

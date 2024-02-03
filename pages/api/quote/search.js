@@ -6,9 +6,9 @@ export default async (req, res) => {
         const apiUrl = `${process.env.URL}/api/quote/result`;
 
         // Define o cabeçalho de controle de cache
-        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-        response.setHeader('CDN-Cache-Control', 'max-age=21600');
-        response.setHeader('Cache-Control', 'max-age=21600');
+        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('Cache-Control', 'max-age=86400');
 
         // Faz solicitações em paralelo para obter todos os dados disponíveis e a consulta da requisição
         const [allDataResponse, { query }] = await Promise.all([

@@ -18,8 +18,6 @@ const DocsMenu = () => {
                     <FontAwesomeIcon icon={faFileLines} /> Documentação</Link>
                 <Link href="/docs/introduction" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/introduction') ? 'active' : ''}`}>
                     <FontAwesomeIcon icon={faInfoCircle} /> Introdução</Link>
-                <Link href="/docs/domain" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/domain') ? 'active' : ''}`}>
-                    <FontAwesomeIcon icon={faGlobe} /> Informações sobre o Domínio</Link>
                 <Link href="/docs/endpoints" passHref className={`list-group-item list-group-item-action ${isCurrentPage('/endpoints') ? 'active' : ''}`}>
                     <FontAwesomeIcon icon={faLink} /> Endpoints</Link>
             </div>
