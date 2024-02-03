@@ -27,9 +27,9 @@ async function selic(request, response) {
     };
 
     // Cache da Vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('CDN-Cache-Control', 'max-age=21600');
-    response.setHeader('Cache-Control', 'max-age=21600');
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=172800');
+    response.setHeader('CDN-Cache-Control', 'max-age=172800');
+    response.setHeader('Cache-Control', 'max-age=172800');
 
     // Responde com os dados simplificados em JSON
     return response.status(200).json(simplifiedData);
