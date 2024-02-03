@@ -84,11 +84,11 @@ const DomainInfo = () => {
               <div className="mt-5">
                 <h2 className="text-center mb-4">Domínio Atual</h2>
                 <p className="text-center">
-                  O domínio atual é <strong>brinvestapi.me</strong> e é fornecido gratuitamente, com uma duração de 1 ano. No entanto, recomendamos fortemente o uso do domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua.
+                  O domínio atual é <strong>brinvestapi.me</strong> e é fornecido gratuitamente, com uma duração de 1 ano. No entanto, recomendamos fortemente o uso do domínio fornecido pela <a href='https://vercel.com'>Vercel</a> para garantir estabilidade contínua e melhor performance.
                 </p>
 
                 <div className="text-center">
-                  <h5>Domínio Vercel Recomendado</h5>
+                  <h5>Domínio Recomendado</h5>
                   <p>O domínio fornecido pela <a href='https://vercel.com'>Vercel</a> é <strong>https://brinvestapi.vercel.app/</strong>.</p>
                 </div>
               </div>

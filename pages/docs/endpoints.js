@@ -138,10 +138,25 @@ const Endpoints = () => {
                                     <strong>Exemplos:</strong>
                                     <ul>
                                         <li>
-                                            <Link href="https://brinvestapi.vercel.app/api/quote/VALE3" passHref target="_blank">https://brinvestapi.vercel.app/api/quote/ITUB4</Link> - Retorna informações sobre a ação VALE3.
+                                            <Link href="https://brinvestapi.vercel.app/api/quote/VALE3" passHref target="_blank">https://brinvestapi.vercel.app/api/quote/VALE3</Link> - Retorna informações sobre a ação VALE3.
                                         </li>
                                         <li>
                                             <Link href="https://brinvestapi.vercel.app/api/quote/search?query=VALE" passHref target="_blank">https://brinvestapi.vercel.app/api/quote/search?query=VALE</Link> - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="endpoint-section mt-5">
+                                <h2 className="text-center mb-4">Dados de fundamentus e Quote juntos</h2>
+                                <p>
+                                    <strong>Retorna dados de fundamentus e quote juntos de uma ação:</strong> [GET/POST]{' '}
+                                    <code>https://brinvestapi.vercel.app/api/all/[TICKET]</code>
+                                </p>
+                                <div className="mt-3">
+                                    <strong>Exemplo:</strong>
+                                    <ul>
+                                        <li>
+                                            <Link href="https://brinvestapi.vercel.app/api/all/VALE3" passHref target="_blank">https://brinvestapi.vercel.app/api/all/VALE3</Link> - Retorna informações sobre a ação VALE3.
                                         </li>
                                     </ul>
                                 </div>
