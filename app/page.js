@@ -84,16 +84,16 @@ const Home = () => {
           <h2 className="mb-4">Por que escolher a BrInvestAPI?</h2>
           <div className="row justify-content-center">
             <div className="col-md-4 mb-4">
-              <div className="card bg-light text-dark h-100 rounded shadow border-0">
-                <div className="card-body">
+              <div className="card h-100 rounded shadow border-0">
+                <div className="card-body bg-light text-dark">
                   <h5 className="card-title">Dados Abrangentes</h5>
                   <p className="card-text">Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.</p>
                 </div>
               </div>
             </div>
             <div className="col-md-4 mb-4">
-              <div className="card bg-light text-dark h-100 rounded shadow border-0">
-                <div className="card-body">
+              <div className="card h-100 rounded shadow border-0">
+                <div className="card-body bg-light text-dark">
                   <h5 className="card-title">Atualizações em Tempo Real</h5>
                   <p className="card-text">Mantenha-se informado com dados do mercado de ações em tempo real e atualizados para tomar decisões oportunas.</p>
                 </div>
@@ -101,7 +101,7 @@ const Home = () => {
             </div>
             <div className="col-md-4 mb-4">
               <div className="card bg-light text-dark h-100 rounded shadow border-0">
-                <div className="card-body">
+                <div className="card-body bg-light text-dark">
                   <h5 className="card-title">Integração Fácil</h5>
                   <p className="card-text">Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.</p>
                 </div>
@@ -110,7 +110,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-5 text-center">
+        <div className="mt-5 text-center text-dark">
           <h2 className="mb-4">Por que a BrInvestAPI Existe?</h2>
           <p className="lead">
             A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados sempre atualizados.

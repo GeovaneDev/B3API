@@ -1,5 +1,7 @@
+"use client"
 import Link from 'next/link';
 import Image from 'next/image'
+import { DefaultSeo } from 'next-seo';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +9,44 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const NotFoundPage = () => {
   return (
     <div>
+      <DefaultSeo
+        title="BrInvestAPI - Erro 404"
+        description="Página não encontrada."
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
+          {
+            name: 'robots',
+            content: 'noindex, nofollow',
+          },
+          {
+            name: 'Strict-Transport-Security',
+            content: 'max-age=63072000; includeSubdomains; preload',
+          },
+          {
+            name: 'X-Content-Type-Options',
+            content: 'nosniff',
+          },
+          {
+            name: 'X-Frame-Options',
+            content: 'DENY',
+          },
+          {
+            name: 'X-XSS-Protection',
+            content: '1; mode=block',
+          },
+          {
+            name: 'Referrer-Policy',
+            content: 'same-origin',
+          },
+          {
+            name: 'Set-Cookie',
+            content: 'HttpOnly; Secure; SameSite=Strict',
+          }
+        ]}
+      />
       <Navbar />
 
       <div className="container mt-5">

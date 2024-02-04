@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import Head from 'next/head'
-import { DefaultSeo } from 'next-seo'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -18,9 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <html lang="pt-br">
         <body className={inter.className}>{children}</body>
       </html>

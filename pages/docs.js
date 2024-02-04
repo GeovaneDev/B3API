@@ -1,6 +1,5 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
