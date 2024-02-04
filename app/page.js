@@ -110,11 +110,15 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-5 text-center text-dark">
-          <h2 className="mb-4">Por que a BrInvestAPI Existe?</h2>
-          <p className="lead">
-            A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados sempre atualizados.
-          </p>
+        <div className="col-md-12 mb-12">
+          <div className="card bg-light text-dark h-100 rounded shadow border-0">
+            <div className="card-body bg-light text-dark">
+              <h2 className="mb-4 text-center">Por que a BrInvestAPI Existe?</h2>
+              <p className="lead text-center">
+                A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados sempre atualizados.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
