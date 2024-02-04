@@ -96,6 +96,11 @@ export default async function handler(req, res) {
       fiftyTwoWeekHigh: quoteData.fiftyTwoWeekHigh,
       priceEarnings: quoteData.priceEarnings,
       earningsPerShare: quoteData.earningsPerShare,
+      historicalDataPrice: quoteData.historicalDataPrice,
+      validRanges: quoteData.validRanges,
+      validIntervals: quoteData.validIntervals,
+      priceEarnings: quoteData.priceEarnings,
+      earningsPerShare: quoteData.earningsPerShare,
     };
 
     res.status(200).json(combinedData);

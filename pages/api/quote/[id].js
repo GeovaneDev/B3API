@@ -29,6 +29,8 @@ async function quote(request, response) {
     const axiosResponse = await axios.get(url, {
       params: {
         token: process.env.TOKEN, // Usa o token do arquivo .env
+        range: "3mo",
+        interval: "1d"
       },
     });
 
