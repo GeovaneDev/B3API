@@ -1,23 +1,15 @@
 import axios from 'axios';
 
-export default async function handler(req, res) {
-  const ticket = req.query.ticket;
+export default async function handler(request, response) {
+  const ticket = request.query.ticket;
 
   try {
-    // URL do env
-    const URL = process.env.URL;
-
-    // Cache da Vercel
-    res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-    res.setHeader('CDN-Cache-Control', 'max-age=86400');
-    res.setHeader('Cache-Control', 'max-age=86400');
-
     // Obter dados da API fundamentus
-    const fundamentusResponse = await axios.get(`${URL}/api/fundamentus/${ticket}`);
+    const fundamentusResponse = await axios.get(`${process.env.URL}/api/fundamentus/${ticket}`);
     const fundamentusData = fundamentusResponse.data;
 
     // Obter dados da API quote
-    const quoteResponse = await axios.get(`${URL}/api/quote/${ticket}`);
+    const quoteResponse = await axios.get(`${process.env.URL}/api/quote/${ticket}`);
     const quoteData = quoteResponse.data;
     // Criar objeto combinado
     const combinedData = {
@@ -103,9 +95,14 @@ export default async function handler(req, res) {
       earningsPerShare: quoteData.earningsPerShare,
     };
 
-    res.status(200).json(combinedData);
+    // Cache da Vercel
+    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+    response.setHeader('CDN-Cache-Control', 'max-age=86400');
+    response.setHeader('Cache-Control', 'max-age=86400');
+
+    response.status(200).json(combinedData);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao obter dados' });
+    response.status(500).json({ error: 'Erro ao obter dados' });
   }
 }

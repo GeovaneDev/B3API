@@ -2,24 +2,16 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import iconv from 'iconv-lite';
 
-export default async function handler(req, res) {
-    let { ticket } = req.query;
+export default async function handler(request, response) {
+    let { ticket } = request.query;
 
     try {
-        // Obtém a URL da API do ambiente
-        let URL = process.env.URL;
-
-        // Cache da Vercel
-        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-        res.setHeader('CDN-Cache-Control', 'max-age=86400');
-        res.setHeader('Cache-Control', 'max-age=86400');
-
         // Faz uma solicitação para obter a lista de ações disponíveis
-        const { data: { data: stockList } } = await axios.get(`${URL}/api/fundamentus/available`);
+        const { data: { data: stockList } } = await axios.get(`${process.env.URL}/api/fundamentus/available`);
 
         // Verifica se o ticket fornecido é uma string
         if (typeof ticket !== 'string') {
-            return res.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
+            return response.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
         }
 
         // Converte o ticket para maiúsculas
@@ -29,14 +21,14 @@ export default async function handler(req, res) {
         const isTicketAvailable = stockList.some(stock => stock.ticker === ticket);
 
         if (!isTicketAvailable) {
-            return res.status(400).json({ error: `Ticket not found in the available list. Go to ${URL}/api/fundamentus/available` });
+            return res.status(400).json({ error: `Ticket not found in the available list. Go to ${process.env.URL}/api/fundamentus/available` });
         }
 
         // Faz a requisição para obter os dados de dividendos da nova API
-        const dividendResponse = await axios.get(`${URL}/api/fundamentus/dividend?ticket=${ticket}`);
+        const dividendResponse = await axios.get(`${process.env.URL}/api/fundamentus/dividend?ticket=${ticket}`);
         const dividendData = dividendResponse.data;
 
-        const response = await axios.post(
+        const responseAxios = await axios.post(
             `https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`,
             {},
             {
@@ -49,7 +41,7 @@ export default async function handler(req, res) {
             }
         );
 
-        const decodedResponse = iconv.decode(Buffer.from(response.data), 'latin1');
+        const decodedResponse = iconv.decode(Buffer.from(responseAxios.data), 'latin1');
 
         const $ = cheerio.load(decodedResponse, { decodeEntities: false });
 
@@ -107,9 +99,14 @@ export default async function handler(req, res) {
             lucro_liquido_3_meses: removeNewLines($('table:nth-child(6) tr:nth-child(5) td:nth-child(4)').text()),
         };
 
-        res.status(200).json(data);
+        // Cache da Vercel
+        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('Cache-Control', 'max-age=86400');
+
+        response.status(200).json(data);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Internal server error' });
+        response.status(500).json({ error: 'Internal server error' });
     }
 }

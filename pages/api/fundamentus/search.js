@@ -1,27 +1,19 @@
 import axios from 'axios';
 
 // Função que trata a requisição para buscar ações com base em uma consulta
-export default async (req, res) => {
+export default async (request, response) => {
     try {
-        // Obtém a URL da API do ambiente
-        const URL = process.env.URL;
-
-        // Cache da Vercel
-        res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-        res.setHeader('CDN-Cache-Control', 'max-age=86400');
-        res.setHeader('Cache-Control', 'max-age=86400');
-
         // Faz solicitações em paralelo para obter a lista de ações disponíveis e a consulta da requisição
         const [availableStocksResponse, { query }] = await Promise.all([
-            axios.get(`${URL}/api/fundamentus/available`),
-            req.query
+            axios.get(`${process.env.URL}/api/fundamentus/available`),
+            request.query
         ]);
 
         const stockList = availableStocksResponse.data.data;
 
         // Verifica se a consulta está presente
         if (!query) {
-            return res.status(400).json({ error: 'Query parameter "query" is required' });
+            return response.status(400).json({ error: 'Query parameter "query" is required' });
         }
 
         // Converte a consulta para maiúsculas para garantir correspondência insensível a maiúsculas e minúsculas
@@ -38,19 +30,24 @@ export default async (req, res) => {
             (stock.ticker.includes(queryUpperCase) || stock.name.toUpperCase().includes(queryUpperCase)) && stockIndex[stock.ticker]
         );
 
+        // Cache da Vercel
+        response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('CDN-Cache-Control', 'max-age=86400');
+        response.setHeader('Cache-Control', 'max-age=86400');
+
         // Responde com as ações filtradas
-        res.status(200).json({ data: filteredStocks });
+        response.status(200).json({ data: filteredStocks });
     } catch (error) {
         // Trata erros durante a execução da função
         console.error('Error searching stocks:', error);
 
         // Verifica o tipo de erro e responde adequadamente
         if (error.response) {
-            res.status(error.response.status).json({ error: error.response.data });
+            response.status(error.response.status).json({ error: error.response.data });
         } else if (error.request) {
-            res.status(500).json({ error: 'No response from the server. Please try again.' });
+            response.status(500).json({ error: 'No response from the server. Please try again.' });
         } else {
-            res.status(500).json({ error: 'An unexpected error occurred. Please try again.' });
+            response.status(500).json({ error: 'An unexpected error occurred. Please try again.' });
         }
     }
 };

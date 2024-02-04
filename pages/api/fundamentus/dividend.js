@@ -5,11 +5,6 @@ import iconv from 'iconv-lite';
 export default async function handler(req, res) {
   const { ticket } = req.query;
 
-  // Cache da Vercel
-  res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-  res.setHeader('CDN-Cache-Control', 'max-age=86400');
-  res.setHeader('Cache-Control', 'max-age=86400');
-
   //Evita do ticket estar vazio
   if (!ticket) {
     return res.status(400).json({ error: 'Ticket parameter is required' });
@@ -39,6 +34,11 @@ export default async function handler(req, res) {
 
     //Adiciona a porcentagem
     const dividendYieldValueWithPercentage = dividendYieldValue + '%';
+
+    // Cache da Vercel
+    res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+    res.setHeader('CDN-Cache-Control', 'max-age=86400');
+    res.setHeader('Cache-Control', 'max-age=86400');
 
     //Responde com um json
     res.status(200).json({

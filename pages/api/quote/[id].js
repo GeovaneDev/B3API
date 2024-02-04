@@ -22,11 +22,8 @@ async function quote(request, response) {
       });
     }
 
-    // Constroi a URL da API
-    const url = `https://brapi.dev/api/quote/${id}`;
-
     // Envia a requesição em GET
-    const axiosResponse = await axios.get(url, {
+    const axiosResponse = await axios.get(`https://brapi.dev/api/quote/${id}`, {
       params: {
         token: process.env.TOKEN, // Usa o token do arquivo .env
         range: "3mo",

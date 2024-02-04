@@ -1,10 +1,10 @@
 import axios from 'axios';
 import iconv from 'iconv-lite';
 
-export default async function handler(req, res) {
+export default async function handler(request, response) {
   try {
     //Envia o request
-    const response = await axios.post(
+    const responseAxios = await axios.post(
       `https://www.fundamentus.com.br/script/cmplte.php`,
       {},
       {
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   );
 
   //Trata os dados em utf-8
-    const html = iconv.decode(response.data, 'iso-8859-1');
+    const html = iconv.decode(responseAxios.data, 'iso-8859-1');
     const match = html.match(/var tokens = (\[.*?\]);/s);
 
     //Corrige e organiza os dados
@@ -41,19 +41,19 @@ export default async function handler(req, res) {
       }, []);
 
       // Cache da Vercel
-      res.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-      res.setHeader('CDN-Cache-Control', 'max-age=86400');
-      res.setHeader('Cache-Control', 'max-age=86400');
+      response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
+      response.setHeader('CDN-Cache-Control', 'max-age=86400');
+      response.setHeader('Cache-Control', 'max-age=86400');
 
       //Responde com os dados
-      res.status(200).json({ data: dataArray });
+      response.status(200).json({ data: dataArray });
     } else {
       //Trata erros
-      res.status(500).json({ error: 'Internal server error 1000' });
+      response.status(500).json({ error: 'Internal server error 1000' });
     }
   } catch (error) {
     //Trata erros
     console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    response.status(500).json({ error: 'Internal server error' });
   }
 }

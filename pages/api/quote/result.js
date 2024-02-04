@@ -2,11 +2,12 @@ import axios from 'axios';
 
 export default async (request, response) => {
   try {
-    // URL dos dados
-    const apiUrl = 'https://brapi.dev/api/quote/list?token=' + process.env.TOKEN;
-
     // Faz uma solicitação para obter os dados de ações
-    const { data } = await axios.get(apiUrl);
+    const { data } = await axios.get(`'https://brapi.dev/api/quote/list`, {
+      params: {
+        token: process.env.TOKEN, // Use a chave da API do arquivo .env
+      }
+    });
 
     //Cache da Vercel
     response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
