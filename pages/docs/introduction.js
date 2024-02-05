@@ -78,7 +78,7 @@ const Introduction = () => {
               <h1 className="display-4 text-center mb-4">Introdução à BrInvestAPI</h1>
 
               <p className="lead">
-                Bem-vindo à BrInvestAPI, sua fonte para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras. Confira abaixo:
+                Bem-vindo à BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras. Confira abaixo:
               </p>
 
               <div className="row mt-5">

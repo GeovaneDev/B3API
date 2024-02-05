@@ -68,9 +68,10 @@ const TermsOfService = () => {
       <Navbar />
 
       <div className="container mt-5">
-        <div className="bg-light p-5 rounded shadow">
+        <div className="bg-light text-dark p-5 rounded shadow">
           <h1 className="display-5 mb-4 text-center">Termos de Serviço</h1>
 
+          {/* Informações sobre o projeto */}
           <div className="alert alert-info" role="alert">
             Este é um projeto sem fins lucrativos e um hobby do desenvolvedor{' '}
             <a
