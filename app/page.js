@@ -72,12 +72,12 @@ const Home = () => {
 
       <div className="container mt-5">
         <div className="bg-light text-dark p-5 rounded shadow text-center">
-          <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={140} height={140} />
+          <Image src="/BrInvestAPI.png" alt="Ícone BrInvestAPI" width={140} height={140} />
           <h1 className="display-4 mb-4">BrInvestAPI</h1>
           <p className="lead">
             Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.
           </p>
-          <Link href="/docs" passHref className="btn btn-primary btn-lg mt-3">Começar Agora</Link>
+          <Link href="/docs" passHref className="btn btn-primary btn-lg mt-3 rounded-pill">Começar agora</Link>
         </div>
 
         <div className="mt-5 text-center">

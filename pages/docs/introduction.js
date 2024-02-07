@@ -89,7 +89,7 @@ const Introduction = () => {
                       <p className="card-text">
                         A BrInvestAPI fornece informações sobre os fundamentos de uma empresa, incluindo dados como P/L, P/VP, PSR, DY, ROIC, ROE, Div. Yield, Cresc. 5 anos, entre outros.
                       </p>
-                      <a href="https://www.fundamentus.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                      <a href="https://www.fundamentus.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const Introduction = () => {
                       <p className="card-text">
                         Mantenha-se atualizado com as taxas CDI e SELIC. A BrInvestAPI utiliza dados fornecidos pelo serviço HG Brasil para oferecer informações sobre essas taxas essenciais.
                       </p>
-                      <a href="https://hgbrasil.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                      <a href="https://hgbrasil.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const Introduction = () => {
                       <p className="card-text">
                         Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço BrAPI para mantê-lo informado sobre as últimas mudanças no mercado de ações brasileiro.
                       </p>
-                      <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Saiba Mais</a>
+                      <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
                     </div>
                   </div>
                 </div>

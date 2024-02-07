@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
-              <Link href="/docs" passHref className="nav-link btn btn-outline-primary active">Documentação</Link>
+              <Link href="/docs" passHref className="nav-link btn btn-outline-primary active rounded-pill">Documentação</Link>
             </li>
             <li className="nav-item">
               <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">

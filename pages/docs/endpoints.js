@@ -77,7 +77,7 @@ const Endpoints = () => {
                         <div className="bg-light p-5 rounded shadow">
                             <h1 className="display-4 text-center mb-4">Endpoints da BrInvestAPI</h1>
 
-                            <div className="endpoint-section">
+                            <div className="endpoint-section rounded p-4">
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
                                     <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
@@ -108,7 +108,7 @@ const Endpoints = () => {
                                 </div>
                             </div>
 
-                            <div className="endpoint-section mt-5">
+                            <div className="endpoint-section rounded p-4">
                                 <h2 className="text-center mb-4">Quote</h2>
                                 <p>
                                     <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
@@ -147,7 +147,7 @@ const Endpoints = () => {
                                 </div>
                             </div>
 
-                            <div className="endpoint-section mt-5">
+                            <div className="endpoint-section rounded p-4">
                                 <h2 className="text-center mb-4">Dados de fundamentus e Quote juntos</h2>
                                 <p>
                                     <strong>Retorna dados de fundamentus e quote juntos de uma ação:</strong> [GET/POST]{' '}
