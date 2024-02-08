@@ -75,48 +75,30 @@ const Introduction = () => {
 
           <div className="col-md-9">
             <div className="bg-light p-5 rounded shadow">
-              <h1 className="display-4 text-center mb-4">Introdução à BrInvestAPI</h1>
+              <h1 className="display-4 text-center mb-4">Documentação da API</h1>
+
+              <div className="alert alert-warning" role="alert">
+                A BrInvestAPI está em constante desenvolvimento. Caso encontre bugs ou tenha sugestões, por favor, relate-os em nossos{' '}
+                <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">Issues no GitHub</a>.
+              </div>
 
               <p className="lead">
-                Bem-vindo à BrInvestAPI, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Nossa API oferece uma variedade de informações financeiras. Confira abaixo:
+                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
+                <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>. A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
               </p>
 
-              <div className="row mt-5">
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100">
-                    <div className="card-body text-center">
-                      <h2 className="h3 mb-4">Dados Fundamentus</h2>
-                      <p className="card-text">
-                        A BrInvestAPI fornece informações sobre os fundamentos de uma empresa, incluindo dados como P/L, P/VP, PSR, DY, ROIC, ROE, Div. Yield, Cresc. 5 anos, entre outros.
-                      </p>
-                      <a href="https://www.fundamentus.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
-                    </div>
-                  </div>
-                </div>
+              <div className="border-top mt-4 pt-4">
+                <h2 className="mb-4">
+                  <Link href="/docs/introduction" passHref className="text-decoration-none text-dark">Introdução</Link>
+                </h2>
+                <p className="text-muted">Uma visão geral da API e suas principais funcionalidades.</p>
+              </div>
 
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100">
-                    <div className="card-body text-center">
-                      <h2 className="h3 mb-4">Taxas CDI e SELIC</h2>
-                      <p className="card-text">
-                        Mantenha-se atualizado com as taxas CDI e SELIC. A BrInvestAPI utiliza dados fornecidos pelo serviço HG Brasil para oferecer informações sobre essas taxas essenciais.
-                      </p>
-                      <a href="https://hgbrasil.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100">
-                    <div className="card-body text-center">
-                      <h2 className="h3 mb-4">Dados de Ações</h2>
-                      <p className="card-text">
-                        Obtenha dados de ações atualizados a cada 3 horas. A BrInvestAPI utiliza informações fornecidas pelo serviço BrAPI para mantê-lo informado sobre as últimas mudanças no mercado de ações brasileiro.
-                      </p>
-                      <a href="https://brapi.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill p-2">Saiba Mais</a>
-                    </div>
-                  </div>
-                </div>
+              <div className="border-top mt-4 pt-4">
+                <h2 className="mb-4">
+                  <Link href="/docs/endpoints" passHref className="text-decoration-none text-dark">Endpoints</Link>
+                </h2>
+                <p className="text-muted">Lista e descrição dos endpoints disponíveis.</p>
               </div>
             </div>
           </div>

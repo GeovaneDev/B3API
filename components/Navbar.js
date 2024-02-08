@@ -10,15 +10,15 @@ const Navbar = () => {
       <div className="container">
         <Link href="/" passHref className="navbar-brand d-flex align-items-center">
           <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={50} height={50} />
-          <span className="fw-bold">BrInvestAPI</span>
+          <span className="fw-bold ms-2">BrInvestAPI</span>
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="navbarNav" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Abrir menu">
-      <span className="navbar-toggler-icon"></span>
-    </button>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
-              <Link href="/docs" passHref className="nav-link btn btn-outline-primary active rounded-pill">Documentação</Link>
+              <Link href="/docs" passHref className="nav-link btn btn-outline-primary rounded-pill">Documentação</Link>
             </li>
             <li className="nav-item">
               <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">

@@ -69,45 +69,45 @@ const Docs = () => {
       />
       <Navbar />
 
-<div className="container mt-5">
-  <div className="row">
-    <DocsMenu />
+      <div className="container mt-5">
+        <div className="row">
+          <DocsMenu />
 
-    <div className="col-md-9">
-      <div className="bg-light p-5 rounded shadow">
-        <h1 className="display-4 text-center mb-4">Documentação da API</h1>
+          <div className="col-md-9">
+            <div className="bg-light p-5 rounded shadow">
+              <h1 className="display-4 text-center mb-4">Documentação da API</h1>
 
-        <div className="alert alert-warning" role="alert">
-          A BrInvestAPI está em constante desenvolvimento. Caso encontre bugs ou tenha sugestões, por favor, relate-os em nossos{' '}
-          <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none">Issues no GitHub</a>.
-        </div>
+              <div className="alert alert-warning" role="alert">
+                A BrInvestAPI está em constante desenvolvimento. Caso encontre bugs ou tenha sugestões, por favor, relate-os em nossos{' '}
+                <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">Issues no GitHub</a>.
+              </div>
 
-        <p className="lead">
-          Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
-          <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>. A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
-        </p>
+              <p className="lead">
+                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
+                <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>. A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
+              </p>
 
-        <div className="border-top mt-4 pt-4">
-          <h2 className="mb-4">
-            <Link href="/docs/introduction" passHref className="text-decoration-none text-dark">Introdução</Link>
-          </h2>
-          <p className="text-muted">Uma visão geral da API e suas principais funcionalidades.</p>
-        </div>
+              <div className="border-top mt-4 pt-4">
+                <h2 className="mb-4">
+                  <Link href="/docs/introduction" passHref className="text-decoration-none text-dark">Introdução</Link>
+                </h2>
+                <p className="text-muted">Uma visão geral da API e suas principais funcionalidades.</p>
+              </div>
 
-        <div className="border-top mt-4 pt-4">
-          <h2 className="mb-4">
-            <Link href="/docs/endpoints" passHref className="text-decoration-none text-dark">Endpoints</Link>
-          </h2>
-          <p className="text-muted">Lista e descrição dos endpoints disponíveis.</p>
+              <div className="border-top mt-4 pt-4">
+                <h2 className="mb-4">
+                  <Link href="/docs/endpoints" passHref className="text-decoration-none text-dark">Endpoints</Link>
+                </h2>
+                <p className="text-muted">Lista e descrição dos endpoints disponíveis.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<Footer />
-</div>
-);
+      <Footer />
+    </div>
+  );
 };
 
 export default Docs;
