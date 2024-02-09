@@ -5,7 +5,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 
-const Navbar = () => {
+const BoostrapNavbar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
@@ -40,4 +40,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default BoostrapNavbar;
