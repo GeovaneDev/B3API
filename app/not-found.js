@@ -56,14 +56,14 @@ const NotFoundPage = () => {
               src="/404.png"
               alt="404 Not Found"
               className="img-fluid"
-              width={1000}
-              height={1000}
+              width={600}
+              height={600}
             />
-            <h2>Página não encontrada</h2>
+            <h2 className="mt-4">Página não encontrada</h2>
             <p className="lead">
               A página que você está procurando pode ter sido removida ou não está mais disponível.
             </p>
-            <Link href="/" className="btn btn-primary">Voltar para a página inicial</Link>
+            <Link href="/" passHref className="btn btn-primary rounded-pill">Voltar para a página inicial</Link>
           </div>
         </div>
       </div>
