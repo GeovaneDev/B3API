@@ -4,14 +4,14 @@ export default async function handler(request, response) {
   const ticket = request.query.ticket;
 
   try {
-    // Obter dados da API fundamentus
-    const fundamentusResponse = await axios.get(`${process.env.URL}/api/fundamentus/${ticket}`);
-    const fundamentusData = fundamentusResponse.data;
+    const [fundamentusResponse, quoteResponse] = await Promise.all([
+      axios.get(`${process.env.URL}/api/fundamentus/${ticket}`),
+      axios.get(`${process.env.URL}/api/quote/${ticket}`)
+    ]);
 
-    // Obter dados da API quote
-    const quoteResponse = await axios.get(`${process.env.URL}/api/quote/${ticket}`);
-    const quoteData = quoteResponse.data;
-    // Criar objeto combinado
+    const { data: fundamentusData } = fundamentusResponse;
+    const { data: quoteData } = quoteResponse;
+
     const combinedData = {
       empresa: fundamentusData.empresa,
       papel: fundamentusData.papel,
