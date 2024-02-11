@@ -35,8 +35,6 @@ export default async function handler(request, response) {
       p_ativos: fundamentusData.p_ativos,
       p_cap_giro: fundamentusData.p_cap_giro,
       p_ativ_circ_liq: fundamentusData.p_ativ_circ_liq,
-      div_yield: fundamentusData.div_yield,
-      div_yield_value_12_meses: fundamentusData.div_yield_value_12_meses,
       evebitda: fundamentusData.evebitda,
       evebit: fundamentusData.evebit,
       cres_rec_5a: fundamentusData.cres_rec_5a,

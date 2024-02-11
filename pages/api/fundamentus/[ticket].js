@@ -24,10 +24,6 @@ export default async function handler(request, response) {
             return res.status(400).json({ error: `Ticket not found in the available list. Go to ${process.env.URL}/api/fundamentus/available` });
         }
 
-        // Faz a requisição para obter os dados de dividendos da nova API
-        const dividendResponse = await axios.get(`${process.env.URL}/api/fundamentus/dividend?ticket=${ticket}`);
-        const dividendData = dividendResponse.data;
-
         const responseAxios = await axios.post(
             `https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`,
             {},
@@ -69,8 +65,6 @@ export default async function handler(request, response) {
             p_ativos: removeNewLines($('table:nth-child(4) tr:nth-child(6) td:nth-child(4)').text()),
             p_cap_giro: removeNewLines($('table:nth-child(4) tr:nth-child(7) td:nth-child(4)').text()),
             p_ativ_circ_liq: removeNewLines($('table:nth-child(4) tr:nth-child(8) td:nth-child(4)').text()),
-            div_yield: dividendData.dividendYield.porcentage,
-            div_yield_value_12_meses: dividendData.dividendYield.value12month,
             evebitda: removeNewLines($('table:nth-child(4) tr:nth-child(10) td:nth-child(4)').text()),
             evebit: removeNewLines($('table:nth-child(4) tr:nth-child(11) td:nth-child(4)').text()),
             cres_rec_5a: removeNewLines($('table:nth-child(4) tr:nth-child(12) td:nth-child(4)').text()),
