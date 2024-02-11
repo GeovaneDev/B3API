@@ -21,10 +21,10 @@ export default async (request, response) => {
         // Converte a consulta para maiúsculas para garantir correspondência insensível a maiúsculas e minúsculas
         const queryUpperCase = query.toUpperCase();
 
-        // Filtra os dados com base na consulta
+        // Filtra os dados com base na consulta apenas nos campos "name" e "stock"
         const filteredData = {
-            stocks: allData.stocks.filter(stock => stock.stock.includes(queryUpperCase) || stock.name.includes(query)),
-            indexes: allData.indexes.filter(index => index.stock.includes(queryUpperCase) || index.name.includes(query)),
+            stocks: allData.stocks.filter(stock => stock.stock.toUpperCase().includes(queryUpperCase) || stock.name.toUpperCase().includes(queryUpperCase)),
+            indexes: allData.indexes.filter(index => index.stock.toUpperCase().includes(queryUpperCase) || index.name.toUpperCase().includes(queryUpperCase)),
         };
 
         // Define o cabeçalho de controle de cache

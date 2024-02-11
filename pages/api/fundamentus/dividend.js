@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     const response = await axios.get(`https://statusinvest.com.br/acoes/${encodedTicket}`, {
       responseType: 'arraybuffer',
       headers: {
-        'User-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0',
+        'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
         'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       },
