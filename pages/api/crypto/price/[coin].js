@@ -11,7 +11,7 @@ export default async function handler(request, response) {
 
     coin = coin.toLowerCase();
 
-    const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price`, {
+    const cryptoResponse = await axios.get(`https://api.coingecko.com/api/v3/simple/price`, {
       params: {
         ids: `${coin}`,
         vs_currencies: "brl",
@@ -23,7 +23,7 @@ export default async function handler(request, response) {
     response.setHeader('CDN-Cache-Control', 'max-age=86400');
     response.setHeader('Cache-Control', 'max-age=86400');
 
-    const data = response.data;
+    const data = cryptoResponse.data;
     response.status(200).json(data);
   } catch (error) {
     response.status(500).json({ error: error.message });
