@@ -77,6 +77,12 @@ const Endpoints = () => {
                         <div className="bg-light p-5 rounded shadow">
                             <h1 className="display-4 text-center mb-4">Endpoints da BrInvestAPI</h1>
 
+                            <div className="alert alert-warning" role="alert">
+                                <p>
+                                    Devido ao alto volume de solicitações, implementamos um sistema de rate limit. Por favor, evite enviar solicitações em excesso. Se você receber uma resposta com "Rate Limited.", significa que excedeu o limite permitido. Para alguma dúvida, sinta-se à vontade para entrar em contato pelo email <a href="mailto:brinvestapi@proton.me">brinvestapi@proton.me</a>.
+                                </p>
+                            </div>
+
                             <div className="endpoint-section rounded p-4">
                                 <h2 className="text-center mb-4">Fundamentus</h2>
                                 <p>
