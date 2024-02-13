@@ -43,7 +43,7 @@ export default async (request, response) => {
 
         // Verifica o tipo de erro e responde adequadamente
         if (error.response) {
-            response.status(error.response.status).json({ error: error.response.data });
+            response.status(error.response.status).json({ error: "Internal server error" });
         } else if (error.request) {
             response.status(500).json({ error: 'No response from the server. Please try again.' });
         } else {
