@@ -11,10 +11,8 @@ export default async function handler(request, response) {
 
     coin = coin.toLowerCase();
 
-    const cryptoResponse = await axios.get(`https://api.coingecko.com/api/v3/simple/price`, {
+    const cryptoResponse = await axios.get(`https://api.coingecko.com/api/v3/coins/${coin}`, {
       params: {
-        ids: `${coin}`,
-        vs_currencies: "brl",
         x_cg_demo_api_key: apiKey
       },
     });
