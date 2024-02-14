@@ -14,10 +14,10 @@ const DocsMenu = () => {
           <Link href="/docs" passHref className="text-decoration-none text-dark">Documentação</Link>
         </h3>
         <ul className="list-group list-group-flush">
-          <li className={`list-group-item border-0 ${router.pathname === '/docs/introduction' ? 'active rounded-pill text-light' : ''}`}>
+          <li className={`list-group-item border-0 rounded-pill ${router.pathname === '/docs/introduction' ? 'active rounded-pill text-light' : ''}`}>
             <Link href="/docs/introduction" passHref className={`text-decoration-none text-dark rounded-pill d-block p-2 ${router.pathname === '/docs/introduction' ? 'bg-primary text-white' : ''}`} style={{ fontSize: '1.1rem' }}><FontAwesomeIcon icon={faInfoCircle} /> Introdução</Link>
           </li>
-          <li className={`list-group-item border-0 ${router.pathname === '/docs/endpoints' ? 'active rounded-pill text-light' : ''}`}>
+          <li className={`list-group-item border-0 rounded-pill ${router.pathname === '/docs/endpoints' ? 'active rounded-pill text-light' : ''}`}>
             <Link href="/docs/endpoints" passHref className={`text-decoration-none text-dark rounded-pill d-block p-2 ${router.pathname === '/docs/endpoints' ? 'bg-primary text-white' : ''}`} style={{ fontSize: '1.1rem' }}><FontAwesomeIcon icon={faLink} /> Endpoints</Link>
           </li>
         </ul>

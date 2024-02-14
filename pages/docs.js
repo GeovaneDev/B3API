@@ -82,12 +82,12 @@ const Docs = () => {
                 <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">Issues no GitHub</a>.
               </div>
 
-              <p className="lead">
+              <p className="lead text-center">
                 Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
                 <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>. A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
               </p>
 
-              <div className="border-top mt-4 pt-4">
+              <div className="border-top mt-5 pt-4">
                 <h2 className="mb-4">
                   <Link href="/docs/introduction" passHref className="text-decoration-none text-dark">Introdução</Link>
                 </h2>

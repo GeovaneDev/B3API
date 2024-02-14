@@ -10,7 +10,6 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <>
-    <div>
       <DefaultSeo
         title="BrInvestAPI - Dados Financeiros Brasileiros | API B3"
         description="Descubra a melhor API B3, BrInvestAPI. Fornece dados confiáveis e em tempo real sobre ações, cotações, índices e informações essenciais para o mercado financeiro do Brasil. Experimente agora!"
@@ -124,7 +123,6 @@ const Home = () => {
       </div>
       
       <Footer />
-    </div>
     </>
   );
 };

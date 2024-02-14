@@ -75,30 +75,25 @@ const Introduction = () => {
 
           <div className="col-md-9">
             <div className="bg-light p-5 rounded shadow">
-              <h1 className="display-4 text-center mb-4">Documentação da API</h1>
+              <h1 className="display-4 text-center mb-4">Introdução da API</h1>
+              <p className="lead text-center">A BrInvestAPI é sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Seja você um investidor, desenvolvedor ou entusiasta do mercado financeiro, nossa API oferece acesso fácil e rápido a uma ampla gama de informações financeiras atualizadas.</p>
 
-              <div className="alert alert-warning" role="alert">
-                A BrInvestAPI está em constante desenvolvimento. Caso encontre bugs ou tenha sugestões, por favor, relate-os em nossos{' '}
-                <a href="https://github.com/GeovaneDev/BrInvestAPI/issues" className="fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer">Issues no GitHub</a>.
+              <div className="card mt-5">
+                <div className="card-body">
+                  <h2 className="card-title">Dados Disponíveis na API</h2>
+                  <p className="card-text">A BrInvestAPI oferece uma variedade de dados para atender às necessidades dos usuários, incluindo:</p>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Informações fundamentais das empresas listadas na bolsa de valores brasileira.</li>
+                    <li className="list-group-item">Cotações de ações em tempo real, incluindo preços de mercado, volumes de negociação e variações de preço.</li>
+                    <li className="list-group-item">Dados de dividendos, incluindo porcentagens e valores distribuídos nos últimos 12 meses.</li>
+                    <li className="list-group-item">Informações sobre índices financeiros, como CDI e SELIC.</li>
+                  </ul>
+                  <p className="mt-3">Esses são apenas alguns exemplos dos dados disponíveis na BrInvestAPI. Explore nossa documentação completa para descobrir todos os dados e recursos que nossa API tem a oferecer.</p>
+                </div>
               </div>
 
-              <p className="lead">
-                Bem-vindo à documentação oficial da BrInvestAPI. Antes de começar, certifique-se de ler nossos{' '}
-                <Link href="/terms" passHref className="fw-bold text-decoration-none">Termos de Uso</Link>. A BrInvestAPI fornece dados do mercado de ações brasileiro e não exige autenticação para acesso.
-              </p>
-
-              <div className="border-top mt-4 pt-4">
-                <h2 className="mb-4">
-                  <Link href="/docs/introduction" passHref className="text-decoration-none text-dark">Introdução</Link>
-                </h2>
-                <p className="text-muted">Uma visão geral da API e suas principais funcionalidades.</p>
-              </div>
-
-              <div className="border-top mt-4 pt-4">
-                <h2 className="mb-4">
-                  <Link href="/docs/endpoints" passHref className="text-decoration-none text-dark">Endpoints</Link>
-                </h2>
-                <p className="text-muted">Lista e descrição dos endpoints disponíveis.</p>
+              <div className="text-center mt-5">
+                <Link href="/docs/endpoints" className="btn btn-primary btn-lg">Explorar Endpoints</Link>
               </div>
             </div>
           </div>
