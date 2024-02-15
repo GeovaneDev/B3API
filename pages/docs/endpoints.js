@@ -180,6 +180,63 @@ const Endpoints = () => {
                   </div>
                 </div>
               </div>
+              <div className="card mt-4">
+                <div className="card-body">
+                  <h2 className="card-title text-center mb-4">Crypto</h2>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
+                      <strong>Retorna dados sobre uma criptomoeda específica:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/all/(COIN)</code> (substitua (COIN) pelo código da criptomoeda)
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Retorna todas as criptomoedas aceitas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/all/coins</code>
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Mostra informações sobre uma transação da blockchain pelo id:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/transaction/(TRANSACTION)</code> (substitua (TRANSACTION) pelo ID da transação)
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Retorna dados sobre uma carteira de criptomoedas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/wallet/(WALLET)</code> (substitua (WALLET) pelo ID da carteira)
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Retorna a maioria dos dados gerais sobre criptomoedas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/all</code>
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Retorna informações sobre o mercado global de criptomoedas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/global</code>
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Retorna dados dos últimos blocos minerados:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/latestblock</code>
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Mostra as criptomoedas em alta no mercado:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/trending</code>
+                    </li>
+                    <li className="list-group-item">
+                      <strong>Mostra transações de criptomoedas não confirmadas/mineradas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/unconfirmed-transactions</code>
+                    </li>
+                  </ul>
+                  <div className="mt-3">
+                    <strong>Exemplos:</strong>
+                    <ul>
+                      <li>
+                        <Link href="https://www.brinvestapi.me/api/crypto/all/bitcoin" passHref target="_blank">https://www.brinvestapi.me/api/crypto/all/bitcoin</Link> - Retorna dados sobre a criptomoeda Bitcoin (BTC).
+                      </li>
+                      <li>
+                        <Link href="https://www.brinvestapi.me/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" passHref target="_blank">https://www.brinvestapi.me/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</Link> - Retorna informações a carteira de criptomoedas.
+                      </li>
+                      <li>
+                        <Link href="https://www.brinvestapi.me/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883" passHref target="_blank">https://www.brinvestapi.me/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883</Link> - Retorna informações sobre uma transação da blockchain.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

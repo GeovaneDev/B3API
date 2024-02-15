@@ -8,7 +8,7 @@ export default async function handler(request, response) {
             params: {
                 vs_currency: 'brl',
                 order: 'market_cap_desc',
-                per_page: 15000,
+                per_page: 20000,
                 page: 1,
                 sparkline: false,
                 x_cg_demo_api_key: apiKey
