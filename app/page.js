@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <DefaultSeo
         title="BrInvestAPI - Dados Financeiros Brasileiros | API B3"
-        description="Descubra a melhor API B3, BrInvestAPI. Fornece dados confiáveis e em tempo real sobre ações, cotações, índices e informações essenciais para o mercado financeiro do Brasil. Experimente agora!"
+        description="A BrInvestAPI oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!"
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
@@ -27,7 +27,7 @@ const Home = () => {
             },
           ],
           title: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real | API B3 Líder no Mercado',
-          description: 'Descubra a API B3 líder no mercado, BrInvestAPI. Fornece dados confiáveis e em tempo real sobre ações, cotações, índices e informações essenciais para o mercado financeiro do Brasil. Experimente agora!',
+          description: 'A BrInvestAPI oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!',
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -75,7 +75,7 @@ const Home = () => {
           <Image src="/BrInvestAPI.png" alt="Ícone BrInvestAPI" width={140} height={140} />
           <h1 className="display-4 my-4">BrInvestAPI</h1>
           <p className="lead mb-4">
-            Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.
+            A fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.
           </p>
           <Link href="/docs" passHref className="btn btn-primary btn-lg rounded-pill">Começar agora</Link>
         </div>
@@ -84,40 +84,32 @@ const Home = () => {
           <h2 className="mb-4">Por que escolher a BrInvestAPI?</h2>
           <div className="row justify-content-center">
             <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0">
-                <div className="card-body">
-                  <h5 className="card-title">Dados Abrangentes</h5>
-                  <p className="card-text">Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.</p>
-                </div>
+              <div className="card h-100 rounded shadow border-0 p-4">
+                <h5 className="card-title">Dados Abrangentes</h5>
+                <p className="card-text">Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0">
-                <div className="card-body">
-                  <h5 className="card-title">Atualizações em Tempo Real</h5>
-                  <p className="card-text">Mantenha-se informado com dados do mercado de ações em tempo real e atualizados para tomar decisões oportunas.</p>
-                </div>
+              <div className="card h-100 rounded shadow border-0 p-4">
+                <h5 className="card-title">Atualizações em Tempo Real</h5>
+                <p className="card-text">Mantenha-se informado com dados atualizados do mercado de ações.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0">
-                <div className="card-body">
-                  <h5 className="card-title">Integração Fácil</h5>
-                  <p className="card-text">Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.</p>
-                </div>
+              <div className="card h-100 rounded shadow border-0 p-4">
+                <h5 className="card-title">Integração Fácil</h5>
+                <p className="card-text">Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="col-md-12 mb-12">
-          <div className="card rounded shadow border-0">
-            <div className="card-body">
-              <h2 className="mb-4 text-center">Por que a BrInvestAPI Existe?</h2>
-              <p className="lead text-center">
-                A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados sempre atualizados.
-              </p>
-            </div>
+          <div className="card rounded shadow border-0 p-4 bg-light">
+            <h2 className="mb-4 text-center">Por que a BrInvestAPI Existe?</h2>
+            <p className="lead text-center">
+              A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados atualizados.
+            </p>
           </div>
         </div>
       </div>
