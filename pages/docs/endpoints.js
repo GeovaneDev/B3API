@@ -180,6 +180,7 @@ const Endpoints = () => {
                   </div>
                 </div>
               </div>
+
               <div className="card mt-4">
                 <div className="card-body">
                   <h2 className="card-title text-center mb-4">Crypto</h2>

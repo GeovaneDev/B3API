@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import Image from 'next/image'
+import Image from 'next/image';
 import { DefaultSeo } from 'next-seo';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -52,7 +52,7 @@ const NotFoundPage = () => {
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6 text-center">
-            <Image
+          <Image
               src="/404.png"
               alt="404 Not Found"
               className="img-fluid"

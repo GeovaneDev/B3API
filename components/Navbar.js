@@ -11,7 +11,7 @@ const BoostrapNavbar = () => {
       <Container>
         <Link href="/" passHref className="text-decoration-none">
           <Navbar.Brand className="d-flex align-items-center">
-            <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={50} height={50} />
+            <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={50} height={50} priority={true} />
             <div className="fw-bold ms-2">BrInvestAPI</div>
           </Navbar.Brand>
         </Link>
@@ -23,15 +23,11 @@ const BoostrapNavbar = () => {
                 <Button variant="outline-primary" className="rounded-pill">Documentação</Button>
               </Link>
             </Nav.Item>
-            <Nav.Item className="d-lg-none">
-              <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">
-                <span><FontAwesomeIcon icon={faGithub} size="2x" /> Github</span>
-              </a>
-            </Nav.Item>
-            <Nav.Item className="d-none d-lg-block">
-              <a href="https://github.com/GeovaneDev/BrInvestAPI" target="_blank" className="nav-link" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
+            <Nav.Item>
+              <Link href="https://github.com/GeovaneDev/BrInvestAPI" passHref target="_blank" className="nav-link" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faGithub} size="lg" />
+                  <span className="d-inline ms-2">GitHub</span>
+              </Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

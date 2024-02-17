@@ -1,7 +1,6 @@
 "use client";
-import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
@@ -69,51 +68,45 @@ const Home = () => {
         canonical="https://www.brinvestapi.me/"
       />
       <Navbar />
-
-      <div className="container mt-5">
-        <div className="text-center">
-          <Image src="/BrInvestAPI.png" alt="Ícone BrInvestAPI" width={140} height={140} />
-          <h1 className="display-4 my-4">BrInvestAPI</h1>
-          <p className="lead mb-4">
-            A fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.
-          </p>
-          <Link href="/docs" passHref className="btn btn-primary btn-lg rounded-pill">Começar agora</Link>
-        </div>
-
-        <div className="my-5 text-center">
-          <h2 className="mb-4">Por que escolher a BrInvestAPI?</h2>
-          <div className="row justify-content-center">
-            <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0 p-4">
-                <h5 className="card-title">Dados Abrangentes</h5>
-                <p className="card-text">Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.</p>
-              </div>
-            </div>
-            <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0 p-4">
-                <h5 className="card-title">Atualizações em Tempo Real</h5>
-                <p className="card-text">Mantenha-se informado com dados atualizados do mercado de ações.</p>
-              </div>
-            </div>
-            <div className="col-md-4 mb-4">
-              <div className="card h-100 rounded shadow border-0 p-4">
-                <h5 className="card-title">Integração Fácil</h5>
-                <p className="card-text">Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.</p>
+      <section className="hero-section text-center my-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="hero-content">
+                <Image src="/BrInvestAPI.png" alt="BrInvestAPI Logo" width={140} height={140} priority={true} />
+                <h1 className="mb-4">Bem-vindo à BrInvestAPI</h1>
+                <p className="lead mb-4">Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.</p>
+                <Link href="/docs" className="btn btn-primary btn-lg rounded-pill">Comece Agora</Link>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="col-md-12 mb-12">
-          <div className="card rounded shadow border-0 p-4 bg-light">
-            <h2 className="mb-4 text-center">Por que a BrInvestAPI Existe?</h2>
-            <p className="lead text-center">
-              A BrInvestAPI foi criada para fornecer aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Nosso compromisso é oferecer uma API gratuita, de código aberto e com dados atualizados.
-            </p>
+      </section>
+      <section className="feature-section bg-light text-center my-5">
+        <div className="container">
+          <h2 className="mb-5">Por que Escolher a BrInvestAPI?</h2>
+          <div className="row">
+            <div className="col-lg-4 mb-4">
+              <div className="feature-item rounded shadow p-4">
+                <h3 className="mb-3">Dados Abrangentes</h3>
+                <p className="mb-0">Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros.</p>
+              </div>
+            </div>
+            <div className="col-lg-4 mb-4">
+              <div className="feature-item rounded shadow p-4">
+                <h3 className="mb-3">Atualizações em Tempo Real</h3>
+                <p className="mb-0">Mantenha-se informado com dados atualizados do mercado de ações.</p>
+              </div>
+            </div>
+            <div className="col-lg-4 mb-4">
+              <div className="feature-item rounded shadow p-4">
+                <h3 className="mb-3">Integração Fácil</h3>
+                <p className="mb-0">Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
+      </section>
       <Footer />
     </>
   );
