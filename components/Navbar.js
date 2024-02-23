@@ -7,7 +7,7 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 
 const BoostrapNavbar = () => {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
+    <Navbar bg="dark" expand="lg" variant="dark" className="py-2">
       <Container>
         <Link href="/" passHref className="text-decoration-none">
           <Navbar.Brand className="d-flex align-items-center">
@@ -20,13 +20,13 @@ const BoostrapNavbar = () => {
           <Nav className="ms-auto align-items-center">
             <Nav.Item>
               <Link href="/docs" passHref>
-                <Button variant="outline-primary" className="rounded-pill">Documentação</Button>
+                <Button variant="outline-primary" className="rounded-pill me-3">Documentação</Button>
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="https://github.com/GeovaneDev/BrInvestAPI" passHref target="_blank" className="nav-link" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faGithub} size="lg" />
-                  <span className="d-inline ms-2">GitHub</span>
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <span className="d-inline ms-2">GitHub</span>
               </Link>
             </Nav.Item>
           </Nav>

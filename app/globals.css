@@ -2,3 +2,7 @@
     background-color: #1a1a1a;
     color: #fff;
 }
+
+.dark-mode a {
+    color: #fff;
+}
