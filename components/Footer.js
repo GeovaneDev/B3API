@@ -7,10 +7,10 @@ const Footer = () => {
   return (
     <footer className="bg-dark text-white text-center py-4 mt-5">
       <div className="container">
-        <p className="mb-2">
+        <p className="mb-2 footer-text">
           &copy; {currentYear} <Link href="https://github.com/GeovaneDev" passHref className="text-white text-decoration-none">GeovaneDev</Link>. <a href="https://github.com/GeovaneDev/BrInvestAPI/blob/main/LICENSE" className="text-white">Licença MIT</a>
         </p>
-        <p className="mb-0">
+        <p className="mb-0 footer-text">
           <Link href="/terms" passHref className="text-white text-decoration-none">Termos de Serviço</Link>
         </p>
       </div>

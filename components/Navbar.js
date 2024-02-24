@@ -10,18 +10,16 @@ const BoostrapNavbar = () => {
     <Navbar bg="dark" expand="lg" variant="dark" className="py-2">
       <Container>
         <Link href="/" passHref className="text-decoration-none">
-          <Navbar.Brand className="d-flex align-items-center">
+          <Navbar.Brand className="d-flex align-items-center text-center">
             <Image src="/BrInvestAPI.png" alt="BrInvestAPI Icon" width={50} height={50} priority={true} />
             <div className="fw-bold ms-2">BrInvestAPI</div>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="ms-auto align-items-center">
             <Nav.Item>
-              <Link href="/docs" passHref>
-                <Button variant="outline-primary" className="rounded-pill me-3">Documentação</Button>
-              </Link>
+              <Link href="/docs" passHref className="btn btn-primary rounded-pill mx-3" style={{ padding: '0.75rem 1.5rem', fontSize: '1.1rem', fontWeight: '500' }}>Documentação</Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="https://github.com/GeovaneDev/BrInvestAPI" passHref target="_blank" className="nav-link" rel="noopener noreferrer">
