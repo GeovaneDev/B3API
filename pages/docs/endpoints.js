@@ -202,6 +202,10 @@ const Endpoints = () => {
                       <code>https://www.brinvestapi.me/api/crypto/wallet/(WALLET)</code> (substitua (WALLET) pelo ID da carteira)
                     </li>
                     <li className="list-group-item">
+                      <strong>Retorna o histórico de preço de uma criptomoedas:</strong> [GET]{' '}
+                      <code>https://www.brinvestapi.me/api/crypto/history/(COIN)</code> (substitua (COIN) pela criptomoeda.)
+                    </li>
+                    <li className="list-group-item">
                       <strong>Retorna a maioria dos dados gerais sobre criptomoedas:</strong> [GET]{' '}
                       <code>https://www.brinvestapi.me/api/crypto/all</code>
                     </li>
