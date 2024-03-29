@@ -11,8 +11,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Converte o ticket para maiúsculas e codifica para URL
-    const encodedTicket = encodeURIComponent(ticket.toUpperCase());
+    // Verifica se ticket é uma string
+    if (typeof ticket !== 'string') {
+      return response.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
+  }
+
+  ticket = ticket.toUpperCase(); // Converte para maiúsculas
 
     //Envia o request
     const response = await axios.get(`https://statusinvest.com.br/acoes/${encodedTicket}`, {

@@ -1,106 +1,105 @@
 import axios from 'axios';
+import cheerio from 'cheerio';
+import iconv from 'iconv-lite';
 
 export default async function handler(request, response) {
-  const ticket = request.query.ticket;
+    let { ticket } = request.query;
 
-  try {
-    const [fundamentusResponse, quoteResponse] = await Promise.all([
-      axios.get(`${process.env.URL}/api/fundamentus/${ticket}`),
-      axios.get(`${process.env.URL}/api/quote/${ticket}`)
-    ]);
+    try {
+        const { data: { data: stockList } } = await axios.get(`${process.env.URL}/api/fundamentus/available`);
 
-    const { data: fundamentusData } = fundamentusResponse;
-    const { data: quoteData } = quoteResponse;
+        if (typeof ticket !== 'string') {
+            return response.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
+        }
 
-    const combinedData = {
-      empresa: fundamentusData.empresa,
-      papel: fundamentusData.papel,
-      logourl: quoteData.logourl,
-      tipo: fundamentusData.tipo,
-      setor: fundamentusData.setor,
-      subsetor: fundamentusData.subsetor,
-      cotacao: quoteData.price,
-      data_ult_cot: fundamentusData.data_ult_cot,
-      min_52_sem: fundamentusData.min_52_sem,
-      max_52_sem: fundamentusData.max_52_sem,
-      vol_med_2m: fundamentusData.vol_med_2m,
-      valor_mercado: fundamentusData.valor_mercado,
-      valor_firma: fundamentusData.valor_firma,
-      ult_balanco_processado: fundamentusData.ult_balanco_processado,
-      nro_acoes: fundamentusData.nro_acoes,
-      pl: fundamentusData.pl,
-      p_vp: fundamentusData.p_vp,
-      p_ebit: fundamentusData.p_ebit,
-      psr: fundamentusData.psr,
-      p_ativos: fundamentusData.p_ativos,
-      p_cap_giro: fundamentusData.p_cap_giro,
-      p_ativ_circ_liq: fundamentusData.p_ativ_circ_liq,
-      evebitda: fundamentusData.evebitda,
-      evebit: fundamentusData.evebit,
-      cres_rec_5a: fundamentusData.cres_rec_5a,
-      lpa: fundamentusData.lpa,
-      vpa: fundamentusData.vpa,
-      marg_bruta: fundamentusData.marg_bruta,
-      marg_ebit: fundamentusData.marg_ebit,
-      marg_liquida: fundamentusData.marg_liquida,
-      ebit_ativo: fundamentusData.ebit_ativo,
-      roic: fundamentusData.roic,
-      roe: fundamentusData.roe,
-      liquidez_corr: fundamentusData.liquidez_corr,
-      div_br_patrim: fundamentusData.div_br_patrim,
-      giro_ativos: fundamentusData.giro_ativos,
-      ativo: fundamentusData.ativo,
-      disponibilidades: fundamentusData.disponibilidades,
-      ativo_circulante: fundamentusData.ativo_circulante,
-      div_bruta: fundamentusData.div_bruta,
-      div_liquida: fundamentusData.div_liquida,
-      patrim_liq: fundamentusData.patrim_liq,
-      receita_liquida_12_meses: fundamentusData.receita_liquida_12_meses,
-      ebit_12_meses: fundamentusData.ebit_12_meses,
-      lucro_liquido_12_meses: fundamentusData.lucro_liquido_12_meses,
-      receita_liquida_3_meses: fundamentusData.receita_liquida_3_meses,
-      ebit_3_meses: fundamentusData.ebit_3_meses,
-      lucro_liquido_3_meses: fundamentusData.lucro_liquido_3_meses,
-      marketCap: quoteData.marketCap,
-      longName: quoteData.longName,
-      dayRange: quoteData.dayRange,
-      twoHundredDayAverage: quoteData.twoHundredDayAverage,
-      twoHundredDayAverageChange: quoteData.twoHundredDayAverageChange,
-      twoHundredDayAverageChangePercent: quoteData.twoHundredDayAverageChangePercent,
-      regularMarketChange: quoteData.regularMarketChange,
-      regularMarketChangePercent: quoteData.regularMarketChangePercent,
-      regularMarketTime: quoteData.regularMarketTime,
-      regularMarketDayHigh: quoteData.regularMarketDayHigh,
-      regularMarketDayLow: quoteData.regularMarketDayLow,
-      regularMarketVolume: quoteData.regularMarketVolume,
-      regularMarketPreviousClose: quoteData.regularMarketPreviousClose,
-      regularMarketOpen: quoteData.regularMarketOpen,
-      averageDailyVolume3Month: quoteData.averageDailyVolume3Month,
-      averageDailyVolume10Day: quoteData.averageDailyVolume10Day,
-      fiftyTwoWeekLowChange: quoteData.fiftyTwoWeekLowChange,
-      fiftyTwoWeekLowChangePercent: quoteData.fiftyTwoWeekLowChangePercent,
-      fiftyTwoWeekRange: quoteData.fiftyTwoWeekRange,
-      fiftyTwoWeekHighChange: quoteData.fiftyTwoWeekHighChange,
-      fiftyTwoWeekHighChangePercent: quoteData.fiftyTwoWeekHighChangePercent,
-      fiftyTwoWeekLow: quoteData.fiftyTwoWeekLow,
-      fiftyTwoWeekHigh: quoteData.fiftyTwoWeekHigh,
-      priceEarnings: quoteData.priceEarnings,
-      earningsPerShare: quoteData.earningsPerShare,
-      historicalDataPrice: quoteData.historicalDataPrice,
-      validRanges: quoteData.validRanges,
-      validIntervals: quoteData.validIntervals,
-      priceEarnings: quoteData.priceEarnings,
-      earningsPerShare: quoteData.earningsPerShare,
-    };
+        ticket = ticket.toUpperCase();
 
-    // Cache da Vercel
-    response.setHeader('Vercel-CDN-Cache-Control', 'max-age=86400');
-    response.setHeader('CDN-Cache-Control', 'max-age=86400');
-    response.setHeader('Cache-Control', 'max-age=86400');
+        const isTicketAvailable = stockList.some(stock => stock.ticker === ticket);
 
-    response.status(200).json(combinedData);
-  } catch (error) {
-    console.error(error);
-    response.status(500).json({ error: 'Erro ao obter dados' });
-  }
+        if (!isTicketAvailable) {
+            return response.status(400).json({ error: `Ticket not found in the available list. Go to ${process.env.URL}/api/fundamentus/available` });
+        }
+
+        const responseAxios = await axios.post(
+            `https://www.fundamentus.com.br/detalhes.php?papel=${ticket}`,
+            {},
+            {
+                responseType: 'arraybuffer',
+                headers: {
+                    'User-agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201',
+                    'Accept': 'text/html, text/plain, text/css, text/sgml, */*;q=0.01',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                },
+            }
+        );
+
+        const decodedResponse = iconv.decode(Buffer.from(responseAxios.data), 'latin1');
+
+        const $ = cheerio.load(decodedResponse, { decodeEntities: false });
+
+        const getValue = (selector) => {
+            const value = $(selector).text().replace(/\n/g, '');
+            return value ? value.trim() : null;
+        };
+
+        const data = {
+            papel: getValue('table:nth-child(2) tr:nth-child(1) td:nth-child(2)'),
+            tipo: getValue('table:nth-child(2) tr:nth-child(2) td:nth-child(2)'),
+            empresa: getValue('table:nth-child(2) tr:nth-child(3) td:nth-child(2)'),
+            setor: getValue('table:nth-child(2) tr:nth-child(4) td:nth-child(2)'),
+            subsetor: getValue('table:nth-child(2) tr:nth-child(5) td:nth-child(2)'),
+            cotacao: getValue('table:nth-child(2) tr:nth-child(1) td:nth-child(4)'),
+            data_ult_cot: getValue('table:nth-child(2) tr:nth-child(2) td:nth-child(4)'),
+            min_52_sem: getValue('table:nth-child(2) tr:nth-child(3) td:nth-child(4)'),
+            max_52_sem: getValue('table:nth-child(2) tr:nth-child(4) td:nth-child(4)'),
+            vol_med_2m: getValue('table:nth-child(2) tr:nth-child(5) td:nth-child(4)'),
+            valor_mercado: getValue('table:nth-child(3) tr:nth-child(1) td:nth-child(2)'),
+            valor_firma: getValue('table:nth-child(3) tr:nth-child(2) td:nth-child(2)'),
+            ult_balanco_processado: getValue('table:nth-child(3) tr:nth-child(1) td:nth-child(4)'),
+            nro_acoes: getValue('table:nth-child(3) tr:nth-child(2) td:nth-child(4)'),
+            pl: getValue('table:nth-child(4) tr:nth-child(2) td:nth-child(4)'),
+            p_vp: getValue('table:nth-child(4) tr:nth-child(3) td:nth-child(4)'),
+            p_ebit: getValue('table:nth-child(4) tr:nth-child(4) td:nth-child(4)'),
+            psr: getValue('table:nth-child(4) tr:nth-child(5) td:nth-child(4)'),
+            p_ativos: getValue('table:nth-child(4) tr:nth-child(6) td:nth-child(4)'),
+            p_cap_giro: getValue('table:nth-child(4) tr:nth-child(7) td:nth-child(4)'),
+            p_ativ_circ_liq: getValue('table:nth-child(4) tr:nth-child(8) td:nth-child(4)'),
+            evebitda: getValue('table:nth-child(4) tr:nth-child(10) td:nth-child(4)'),
+            evebit: getValue('table:nth-child(4) tr:nth-child(11) td:nth-child(4)'),
+            cres_rec_5a: getValue('table:nth-child(4) tr:nth-child(12) td:nth-child(4)'),
+            lpa: getValue('table:nth-child(4) tr:nth-child(2) td:nth-child(6)'),
+            vpa: getValue('table:nth-child(4) tr:nth-child(3) td:nth-child(6)'),
+            marg_bruta: getValue('table:nth-child(4) tr:nth-child(4) td:nth-child(6)'),
+            marg_ebit: getValue('table:nth-child(4) tr:nth-child(5) td:nth-child(6)'),
+            marg_liquida: getValue('table:nth-child(4) tr:nth-child(6) td:nth-child(6)'),
+            ebit_ativo: getValue('table:nth-child(4) tr:nth-child(7) td:nth-child(6)'),
+            roic: getValue('table:nth-child(4) tr:nth-child(8) td:nth-child(6)'),
+            roe: getValue('table:nth-child(4) tr:nth-child(9) td:nth-child(6)'),
+            liquidez_corr: getValue('table:nth-child(4) tr:nth-child(10) td:nth-child(6)'),
+            div_br_patrim: getValue('table:nth-child(4) tr:nth-child(11) td:nth-child(6)'),
+            giro_ativos: getValue('table:nth-child(4) tr:nth-child(12) td:nth-child(6)'),
+            ativo: getValue('table:nth-child(5) tr:nth-child(2) td:nth-child(2)'),
+            disponibilidades: getValue('table:nth-child(5) tr:nth-child(3) td:nth-child(2)'),
+            ativo_circulante: getValue('table:nth-child(5) tr:nth-child(4) td:nth-child(2)'),
+            div_bruta: getValue('table:nth-child(5) tr:nth-child(2) td:nth-child(4)'),
+            div_liquida: getValue('table:nth-child(5) tr:nth-child(3) td:nth-child(4)'),
+            patrim_liq: getValue('table:nth-child(5) tr:nth-child(4) td:nth-child(4)'),
+            receita_liquida_12_meses: getValue('table:nth-child(6) tr:nth-child(3) td:nth-child(2)'),
+            ebit_12_meses: getValue('table:nth-child(6) tr:nth-child(4) td:nth-child(2)'),
+            lucro_liquido_12_meses: getValue('table:nth-child(6) tr:nth-child(5) td:nth-child(2)'),
+            receita_liquida_3_meses: getValue('table:nth-child(6) tr:nth-child(3) td:nth-child(4)'),
+            ebit_3_meses: getValue('table:nth-child(6) tr:nth-child(4) td:nth-child(4)'),
+            lucro_liquido_3_meses: getValue('table:nth-child(6) tr:nth-child(5) td:nth-child(4)'),
+        };
+
+        const cacheControlHeader = 'max-age=86400';
+        response.setHeader('Vercel-CDN-Cache-Control', cacheControlHeader);
+        response.setHeader('CDN-Cache-Control', cacheControlHeader);
+        response.setHeader('Cache-Control', cacheControlHeader);
+
+        response.status(200).json(data);
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ error: 'Internal server error' });
+    }
 }
