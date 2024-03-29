@@ -21,7 +21,7 @@ export default async function handler(request, response) {
         const isTicketAvailable = stockList.some(stock => stock.ticker === ticket);
 
         if (!isTicketAvailable) {
-            return res.status(400).json({ error: `Ticket not found in the available list. Go to ${process.env.URL}/api/fundamentus/available` });
+            return response.status(400).json({ error: `Ticket not found in the available list. Go to ${process.env.URL}/api/fundamentus/available` });
         }
 
         const responseAxios = await axios.post(

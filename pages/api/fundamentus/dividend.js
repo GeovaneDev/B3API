@@ -5,18 +5,19 @@ import iconv from 'iconv-lite';
 export default async function handler(req, res) {
   const { ticket } = req.query;
 
+  //Verifica se o ticket é uma string
+  if (typeof ticket !== 'string') {
+    return res.status(400).json({ error: 'Ticket parameter must be a string' });
+  }
+
   //Evita do ticket estar vazio
   if (!ticket) {
     return res.status(400).json({ error: 'Ticket parameter is required' });
   }
 
   try {
-    // Verifica se ticket é uma string
-    if (typeof ticket !== 'string') {
-      return response.status(400).json({ error: 'Invalid input. Ticket must be a string.' });
-  }
-
-  ticket = ticket.toUpperCase(); // Converte para maiúsculas
+    // Converte o ticket para maiúsculas e codifica para URL
+    const encodedTicket = encodeURIComponent(ticket.toUpperCase());
 
     //Envia o request
     const response = await axios.get(`https://statusinvest.com.br/acoes/${encodedTicket}`, {
