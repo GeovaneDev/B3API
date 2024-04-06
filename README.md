@@ -1,12 +1,12 @@
-# BrInvestAPI
+# B3API
 
-![BrInvestidor](https://github.com/GeovaneDev/BrInvestAPI/assets/87013843/dbcde03e-298f-4e78-831f-2b9fa3e8c6c3)
+![BrInvestidor](https://github.com/GeovaneDev/B3API/assets/87013843/dbcde03e-298f-4e78-831f-2b9fa3e8c6c3)
 
-[https://www.brinvestapi.me/](https://www.brinvestapi.me/) - Sua fonte para dados em tempo real do mercado de ações brasileiro.
+[https://www.B3API.me/](https://www.B3API.me/) - Sua fonte para dados em tempo real do mercado de ações brasileiro.
 
 ## Sobre
 
-A BrInvestAPI foi concebida para proporcionar aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Esta API gratuita é projetada para integrar informações financeiras diretamente em suas aplicações.
+A B3API foi concebida para proporcionar aos desenvolvedores acesso fácil e rápido a dados abrangentes e atualizados do mercado de ações brasileiro. Esta API gratuita é projetada para integrar informações financeiras diretamente em suas aplicações.
 
 ## Funcionalidades
 
@@ -18,11 +18,11 @@ A BrInvestAPI foi concebida para proporcionar aos desenvolvedores acesso fácil 
 
 1. **Clone este repositório:**
 ```
-git clone https://github.com/GeovaneDev/BrInvestAPI.git
+git clone https://github.com/GeovaneDev/B3API.git
 ```
 2. **Instale as dependências:**
 ```
-cd BrInvestAPI
+cd B3API
 npm install
 ```
 3. **Inicie o servidor de desenvolvimento:**
@@ -33,8 +33,8 @@ npm run dev
 
 ## Contribuindo
 
-Fique à vontade para contribuir para o desenvolvimento da BrInvestAPI. Sua colaboração é bem-vinda! Você pode colaborar com código enviando um [Pull Request](https://github.com/GeovaneDev/BrInvestAPI/pulls) ou uma sugestão com os [Issues](https://github.com/GeovaneDev/BrInvestAPI/issues)
+Fique à vontade para contribuir para o desenvolvimento da B3API. Sua colaboração é bem-vinda! Você pode colaborar com código enviando um [Pull Request](https://github.com/GeovaneDev/B3API/pulls) ou uma sugestão com os [Issues](https://github.com/GeovaneDev/B3API/issues)
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença MIT](https://github.com/GeovaneDev/BrInvestAPI/blob/main/LICENSE).
+Este projeto está licenciado sob a [Licença MIT](https://github.com/GeovaneDev/B3API/blob/main/LICENSE).
