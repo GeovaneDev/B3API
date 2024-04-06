@@ -11,23 +11,23 @@ const Home = () => {
   return (
     <>
       <DefaultSeo
-        title="BrInvestAPI - Dados Financeiros Brasileiros | API B3"
-        description="A BrInvestAPI oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!"
+        title="B3API - Dados Financeiros Brasileiros | API B3"
+        description="A B3API oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!"
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.brinvestapi.me/',
-          site_name: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real',
+          url: 'https://b3api.online/',
+          site_name: 'B3API - Dados Financeiros Brasileiros em Tempo Real',
           images: [
             {
-              url: 'https://www.brinvestapi.me/BrInvestAPI.png',
+              url: 'https://b3api.online/B3API.png',
               width: 120,
               height: 120,
-              alt: 'BrInvestAPI Icon',
+              alt: 'B3API Icon',
             },
           ],
-          title: 'BrInvestAPI - Dados Financeiros Brasileiros em Tempo Real | API B3 Líder no Mercado',
-          description: 'A BrInvestAPI oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!',
+          title: 'B3API - Dados Financeiros Brasileiros em Tempo Real | API B3 Líder no Mercado',
+          description: 'A B3API oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!',
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -66,7 +66,7 @@ const Home = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://www.brinvestapi.me/"
+        canonical="https://b3api.online/"
       />
       <Navbar />
       <section className="hero-section text-center my-5">
@@ -74,8 +74,8 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="hero-content">
-                <Image src="/BrInvestAPI.png" alt="BrInvestAPI Logo" width={140} height={140} priority={true} />
-                <h1 className="hero-title">Bem-vindo à BrInvestAPI</h1>
+                <Image src="/B3API.png" alt="B3API Logo" width={140} height={140} priority={true} />
+                <h1 className="hero-title">B3API</h1>
                 <p className="lead-text">Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.</p>
                 <Link href="/docs" className="btn btn-primary btn-lg rounded-pill start-button">Comece Agora</Link>
               </div>
@@ -85,7 +85,7 @@ const Home = () => {
       </section>
       <section className="feature-section text-center my-5">
         <div className="container">
-          <h2 className="section-title">Por que Escolher a BrInvestAPI?</h2>
+          <h2 className="section-title">Por que Escolher a B3API?</h2>
           <div className="row">
             <div className="col-lg-4 mb-4">
               <div className="feature-item">

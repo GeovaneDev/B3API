@@ -8,23 +8,23 @@ const TermsOfService = () => {
   return (
     <div>
       <DefaultSeo
-        title="BrInvestAPI - Termos de Serviço"
-        description="Leia os Termos de Serviço da BrInvestAPI para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
+        title="B3API - Termos de Serviço"
+        description="Leia os Termos de Serviço da B3API para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.brinvestapi.me/terms',
-          site_name: 'BrInvestAPI - Termos de Serviço',
+          url: 'https://b3api.online/terms',
+          site_name: 'B3API - Termos de Serviço',
           images: [
             {
-              url: 'https://www.brinvestapi.me/BrInvestAPI.png',
+              url: 'https://b3api.online/B3API.png',
               width: 120,
               height: 120,
-              alt: 'BrInvestAPI Icon',
+              alt: 'B3API Icon',
             },
           ],
-          title: "BrInvestAPI - Termos de Serviço",
-          description: "Leia os Termos de Serviço da BrInvestAPI para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
+          title: "B3API - Termos de Serviço",
+          description: "Leia os Termos de Serviço da B3API para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -63,7 +63,7 @@ const TermsOfService = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://www.brinvestapi.me/terms"
+        canonical="https://b3api.online/terms"
       />
       <Navbar />
 
@@ -74,27 +74,27 @@ const TermsOfService = () => {
               <h1 className="display-5 mb-4 text-center">Termos de Serviço</h1>
 
               <div className="alert alert-info" role="alert">
-                A BrInvestAPI é um projeto sem fins lucrativos e um hobby do desenvolvedor GeovaneDev. Nosso objetivo é disponibilizar dados gratuitamente sobre o mercado financeiro brasileiro. Não buscamos lucro com a API. Portanto, pode ocorrer a mudança de domínio a cada 1 ano para garantir a continuidade deste serviço de forma sustentável.
+                A B3API é um projeto sem fins lucrativos e um hobby do desenvolvedor GeovaneDev. Nosso objetivo é disponibilizar dados gratuitamente sobre o mercado financeiro brasileiro. Não buscamos lucro com a API. Portanto, pode ocorrer a mudança de domínio a cada 1 ano para garantir a continuidade deste serviço de forma sustentável.
               </div>
 
               <div className="mt-4">
                 <h2 className="mb-4">1. Aceitação dos Termos</h2>
                 <p className="lead">
-                  Ao acessar e utilizar o BrInvestAPI, você expressa seu consentimento e concordância com os presentes Termos de Serviço, assim como com todos os termos e políticas incorporados por referência. Se por acaso você não concordar com qualquer um destes termos, solicitamos que não utilize o serviço.
+                  Ao acessar e utilizar o B3API, você expressa seu consentimento e concordância com os presentes Termos de Serviço, assim como com todos os termos e políticas incorporados por referência. Se por acaso você não concordar com qualquer um destes termos, solicitamos que não utilize o serviço.
                 </p>
               </div>
 
               <div className="mt-4">
                 <h2 className="mb-4">2. Uso Responsável</h2>
                 <p className="lead">
-                  Ao utilizar o BrInvestAPI, você compromete-se a fazê-lo de maneira responsável e ética. O abuso do serviço, incluindo práticas como sobrecarga excessiva de solicitações, não é permitido e pode resultar na suspensão do acesso.
+                  Ao utilizar o B3API, você compromete-se a fazê-lo de maneira responsável e ética. O abuso do serviço, incluindo práticas como sobrecarga excessiva de solicitações, não é permitido e pode resultar na suspensão do acesso.
                 </p>
               </div>
 
               <div className="mt-4">
                 <h2 className="mb-4">3. Limitação de Responsabilidade</h2>
                 <p className="lead">
-                  A BrInvestAPI não se responsabiliza por quaisquer danos diretos, indiretos, incidentais, especiais, consequentes ou punitivos, incluindo, mas não se limitando a, lucros cessantes, perda de dados, uso indevido, interrupção do negócio ou quaisquer outros danos similares, decorrentes ou relacionados ao uso ou incapacidade de usar nosso serviço.
+                  A B3API não se responsabiliza por quaisquer danos diretos, indiretos, incidentais, especiais, consequentes ou punitivos, incluindo, mas não se limitando a, lucros cessantes, perda de dados, uso indevido, interrupção do negócio ou quaisquer outros danos similares, decorrentes ou relacionados ao uso ou incapacidade de usar nosso serviço.
                 </p>
               </div>
             </div>

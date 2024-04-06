@@ -2,38 +2,38 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://www.brinvestapi.me/</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>1.00</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.brinvestapi.me/docs</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/docs</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>0.80</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.brinvestapi.me/terms</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/terms</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>0.80</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.brinvestapi.me/docs/introduction</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/docs/introduction</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>0.70</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.brinvestapi.me/docs/domain</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/docs/domain</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>0.70</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.brinvestapi.me/docs/endpoints</loc>
-    <lastmod>2024-02-02T13:50:19+00:00</lastmod>
+    <loc>https://b3api.online/docs/endpoints</loc>
+    <lastmod>2024-04-06T15:46:33+01:00</lastmod>
     <priority>0.70</priority>
     <changefreq>weekly</changefreq>
   </url>
