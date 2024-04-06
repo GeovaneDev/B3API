@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <DefaultSeo
         title="B3API - Dados Financeiros Brasileiros | API B3"
-        description="A B3API oferece dados financeiros brasileiros confiáveis e em tempo real. Experimente nossa API B3 líder no mercado agora!"
+        description="A B3API oferece dados financeiros brasileiros confiáveis e em tempo real."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
