@@ -1,5 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
+import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,6 +8,7 @@ import Footer from '../components/Footer';
 const TermsOfService = () => {
   return (
     <div>
+      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Termos de Serviço"
         description="Leia os Termos de Serviço da B3API para entender as condições de uso do serviço. Ao acessar e utilizar a API, você concorda com estes termos e políticas."

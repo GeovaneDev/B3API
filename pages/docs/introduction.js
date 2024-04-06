@@ -1,5 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
+import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -9,6 +10,7 @@ import DocsMenu from '../../components/DocsMenu';
 const Introduction = () => {
   return (
     <div>
+      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro"
         description="Descubra a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas."

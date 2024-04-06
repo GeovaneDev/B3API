@@ -1,5 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
+import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -9,6 +10,7 @@ import DocsMenu from '../../components/DocsMenu';
 const Endpoints = () => {
   return (
     <div>
+      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Documentação dos Endpoints | Acesse Dados Financeiros Brasileiros em Tempo Real"
         description="Explore a documentação completa dos endpoints da B3API para acessar dados financeiros brasileiros em tempo real. Descubra como utilizar cada endpoint de forma eficiente e obtenha informações precisas para suas análises e aplicações."

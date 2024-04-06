@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { GoogleAdSense } from "nextjs-google-adsense";
 import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +11,7 @@ import "./globals.css"
 const Home = () => {
   return (
     <>
+    <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Dados Financeiros Brasileiros | API B3"
         description="A B3API oferece dados financeiros brasileiros confiáveis e em tempo real."
