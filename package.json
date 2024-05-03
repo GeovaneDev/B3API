@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npx autocannon -c 500 -d 5 --workers 10 --renderStatusCodes --latency --warmup [ -c 3 -d 5 ] localhost:3000/api/fundamentus/available"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
