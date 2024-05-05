@@ -6,8 +6,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'B3API - Dados Financeiros Brasileiros | API B3',
-  description: 'A B3API oferece dados financeiros brasileiros confiáveis e em tempo real.'
+  title: 'B3API: Dados Financeiros Brasileiros em Tempo Real | API B3',
+  description: 'B3API: Obtenha dados financeiros brasileiros em tempo real para ações, fundos imobiliários, criptomoedas e ETFs. Acesse informações confiáveis e instantâneas.'
 }
 
 export default function RootLayout({

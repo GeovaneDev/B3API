@@ -1,6 +1,5 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -10,18 +9,17 @@ import DocsMenu from '../../components/DocsMenu';
 const Introduction = () => {
   return (
     <div>
-      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
-        title="B3API - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro"
-        description="Descubra a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas."
+        title="B3API - Documentação e Introdução | Dados Financeiros Brasileiros em Tempo Real"
+        description="Explore a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Inicie sua jornada com nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://www.B3API.me/docs/introduction',
+          url: 'https://b3api.me/docs/introduction',
           site_name: 'B3API - Introdução da Documentação',
           images: [
             {
-              url: 'https://www.B3API.me/B3API.png',
+              url: 'https://b3api.me/B3API.png',
               width: 120,
               height: 120,
               alt: 'B3API Icon',
@@ -67,7 +65,7 @@ const Introduction = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://www.B3API.me/docs/introduction"
+        canonical="https://b3api.me/docs/introduction"
       />
       <Navbar />
 

@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import { GoogleAdSense } from "nextjs-google-adsense";
 import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,18 +10,17 @@ import "./globals.css"
 const Home = () => {
   return (
     <>
-    <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
-        title="B3API - Dados Financeiros Brasileiros | API B3"
+        title="B3API: Dados Financeiros Brasileiros em Tempo Real | API B3"
         description="A B3API oferece dados financeiros brasileiros confiáveis e em tempo real."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://b3api.online/',
+          url: 'https://b3api.me/',
           site_name: 'B3API - Dados Financeiros Brasileiros em Tempo Real',
           images: [
             {
-              url: 'https://b3api.online/B3API.png',
+              url: 'https://b3api.me/B3API.png',
               width: 120,
               height: 120,
               alt: 'B3API Icon',
@@ -68,7 +66,7 @@ const Home = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://b3api.online/"
+        canonical="https://b3api.me/"
       />
       <Navbar />
       <section className="hero-section text-center my-5">

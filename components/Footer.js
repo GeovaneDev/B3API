@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Footer = () => {
+const BoostrapFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,4 +18,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default BoostrapFooter;

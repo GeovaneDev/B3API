@@ -1,6 +1,5 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -10,18 +9,17 @@ import DocsMenu from '../components/DocsMenu';
 const Docs = () => {
   return (
     <div>
-      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Documentação | Acesse Dados Financeiros Brasileiros em Tempo Real"
         description="Explore a documentação completa da B3API para acessar dados financeiros brasileiros em tempo real. Descubra como integrar e utilizar nossos serviços de forma eficiente e confiável."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://b3api.online/docs',
+          url: 'https://b3api.me/docs',
           site_name: 'B3API - Documentação',
           images: [
             {
-              url: 'https://b3api.online/B3API.png',
+              url: 'https://b3api.me/B3API.png',
               width: 120,
               height: 120,
               alt: 'B3API Icon',
@@ -67,7 +65,7 @@ const Docs = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://b3api.online/docs"
+        canonical="https://b3api.me/docs"
       />
       <Navbar />
 

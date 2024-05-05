@@ -1,6 +1,5 @@
 import { DefaultSeo } from 'next-seo';
 import React from 'react';
-import { GoogleAdSense } from "nextjs-google-adsense";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -10,18 +9,17 @@ import DocsMenu from '../../components/DocsMenu';
 const Endpoints = () => {
   return (
     <div>
-      <GoogleAdSense publisherId="ca-pub-1050721047606545" />
       <DefaultSeo
         title="B3API - Documentação dos Endpoints | Acesse Dados Financeiros Brasileiros em Tempo Real"
         description="Explore a documentação completa dos endpoints da B3API para acessar dados financeiros brasileiros em tempo real. Descubra como utilizar cada endpoint de forma eficiente e obtenha informações precisas para suas análises e aplicações."
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
-          url: 'https://b3api.online/docs/endpoints',
+          url: 'https://b3api.me/docs/endpoints',
           site_name: 'B3API - Documentação dos Endpoints',
           images: [
             {
-              url: 'https://b3api.online/B3API.png',
+              url: 'https://b3api.me/B3API.png',
               width: 120,
               height: 120,
               alt: 'B3API Icon',
@@ -67,7 +65,7 @@ const Endpoints = () => {
             content: 'HttpOnly; Secure; SameSite=Strict',
           }
         ]}
-        canonical="https://b3api.online/docs/endpoints"
+        canonical="https://b3api.me/docs/endpoints"
       />
       <Navbar />
 
@@ -91,29 +89,29 @@ const Endpoints = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                       <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/fundamentus/available</code>
+                      <code>https://b3api.me/api/fundamentus/available</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Informações sobre os fundamentos da empresa:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
+                      <code>https://b3api.me/api/fundamentus/[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                     </li>
                     <li className="list-group-item">
                       <strong>Dados de dividendos como porcentagem e valor nos últimos 12 meses:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/fundamentus/dividend?ticket=[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
+                      <code>https://b3api.me/api/fundamentus/dividend?ticket=[TICKER]</code> (substitua [TICKER] por um item da API /api/fundamentus/available)
                     </li>
                     <li className="list-group-item">
                       <strong>Pesquisar por ticker:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
+                      <code>https://b3api.me/api/fundamentus/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como PETR para resultados como PETR4 e PETR3)
                     </li>
                   </ul>
                   <div className="mt-3">
                     <strong>Exemplos:</strong>
                     <ul>
                       <li>
-                        <Link href="https://b3api.online/api/fundamentus/PETR4" passHref target="_blank">https://b3api.online/api/fundamentus/PETR4</Link> - Retorna informações sobre os fundamentos da PETR4.
+                        <Link href="https://b3api.me/api/fundamentus/PETR4" passHref target="_blank">https://b3api.me/api/fundamentus/PETR4</Link> - Retorna informações sobre os fundamentos da PETR4.
                       </li>
                       <li>
-                        <Link href="https://b3api.online/api/fundamentus/search?query=PETR" passHref target="_blank">https://b3api.online/api/fundamentus/search?query=PETR</Link> - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar.
+                        <Link href="https://b3api.me/api/fundamentus/search?query=PETR" passHref target="_blank">https://b3api.me/api/fundamentus/search?query=PETR</Link> - Pesquisa por "PETR" e retorna os resultados, o nome também pode ser usado para pesquisar.
                       </li>
                     </ul>
                   </div>
@@ -126,37 +124,37 @@ const Endpoints = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                       <strong>Buscar opções disponíveis:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/available</code>
+                      <code>https://b3api.me/api/quote/available</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Retornar o CDI e SELIC:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/taxes</code>
+                      <code>https://b3api.me/api/quote/taxes</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Pesquisar por ticker:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como ALP para resultados como ALPA4 e ALPK3)
+                      <code>https://b3api.me/api/quote/search?query=[QUERY]</code> (substitua [QUERY] por uma pesquisa, como ALP para resultados como ALPA4 e ALPK3)
                     </li>
                     <li className="list-group-item">
                       <strong>Retornar dados de uma ação específica:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/[TICKER]</code>
+                      <code>https://b3api.me/api/quote/[TICKER]</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Retornar todos os dados disponíveis de ações:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/result</code>
+                      <code>https://b3api.me/api/quote/result</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Pesquisar por índice ou nome da empresa:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/quote/search?query=[QUERY]</code> (substitua [QUERY] pela pesquisa de índice ou nome)
+                      <code>https://b3api.me/api/quote/search?query=[QUERY]</code> (substitua [QUERY] pela pesquisa de índice ou nome)
                     </li>
                   </ul>
                   <div className="mt-3">
                     <strong>Exemplos:</strong>
                     <ul>
                       <li>
-                        <Link href="https://b3api.online/api/quote/VALE3" passHref target="_blank">https://b3api.online/api/quote/VALE3</Link> - Retorna informações sobre a ação VALE3.
+                        <Link href="https://b3api.me/api/quote/VALE3" passHref target="_blank">https://b3api.me/api/quote/VALE3</Link> - Retorna informações sobre a ação VALE3.
                       </li>
                       <li>
-                        <Link href="https://b3api.online/api/quote/search?query=VALE" passHref target="_blank">https://b3api.online/api/quote/search?query=VALE</Link> - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
+                        <Link href="https://b3api.me/api/quote/search?query=VALE" passHref target="_blank">https://b3api.me/api/quote/search?query=VALE</Link> - Pesquisa por "VALE" retornando resultados, incluindo dados sobre o setor, nome, sock, etc.
                       </li>
                     </ul>
                   </div>
@@ -169,14 +167,14 @@ const Endpoints = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                       <strong>Retorna dados de fundamentus e quote juntos de uma ação:</strong> [GET/POST]{' '}
-                      <code>https://b3api.online/api/all/[TICKET]</code>
+                      <code>https://b3api.me/api/all/[TICKET]</code>
                     </li>
                   </ul>
                   <div className="mt-3">
                     <strong>Exemplo:</strong>
                     <ul>
                       <li>
-                        <Link href="https://b3api.online/api/all/VALE3" passHref target="_blank">https://b3api.online/api/all/VALE3</Link> - Retorna informações sobre a ação VALE3.
+                        <Link href="https://b3api.me/api/all/VALE3" passHref target="_blank">https://b3api.me/api/all/VALE3</Link> - Retorna informações sobre a ação VALE3.
                       </li>
                     </ul>
                   </div>
@@ -189,56 +187,56 @@ const Endpoints = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                       <strong>Retorna dados sobre uma criptomoeda específica:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/all/(COIN)</code> (substitua (COIN) pelo código da criptomoeda)
+                      <code>https://b3api.me/api/crypto/all/(COIN)</code> (substitua (COIN) pelo código da criptomoeda)
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna todas as criptomoedas aceitas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/all/coins</code>
+                      <code>https://b3api.me/api/crypto/all/coins</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Mostra informações sobre uma transação da blockchain pelo id:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/transaction/(TRANSACTION)</code> (substitua (TRANSACTION) pelo ID da transação)
+                      <code>https://b3api.me/api/crypto/transaction/(TRANSACTION)</code> (substitua (TRANSACTION) pelo ID da transação)
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna dados sobre uma carteira de criptomoedas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/wallet/(WALLET)</code> (substitua (WALLET) pelo ID da carteira)
+                      <code>https://b3api.me/api/crypto/wallet/(WALLET)</code> (substitua (WALLET) pelo ID da carteira)
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna o histórico de preço de uma criptomoedas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/history/(COIN)</code> (substitua (COIN) pela criptomoeda.)
+                      <code>https://b3api.me/api/crypto/history/(COIN)</code> (substitua (COIN) pela criptomoeda.)
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna a maioria dos dados gerais sobre criptomoedas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/all</code>
+                      <code>https://b3api.me/api/crypto/all</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna informações sobre o mercado global de criptomoedas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/global</code>
+                      <code>https://b3api.me/api/crypto/global</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Retorna dados dos últimos blocos minerados:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/latestblock</code>
+                      <code>https://b3api.me/api/crypto/latestblock</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Mostra as criptomoedas em alta no mercado:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/trending</code>
+                      <code>https://b3api.me/api/crypto/trending</code>
                     </li>
                     <li className="list-group-item">
                       <strong>Mostra transações de criptomoedas não confirmadas/mineradas:</strong> [GET]{' '}
-                      <code>https://b3api.online/api/crypto/unconfirmed-transactions</code>
+                      <code>https://b3api.me/api/crypto/unconfirmed-transactions</code>
                     </li>
                   </ul>
                   <div className="mt-3">
                     <strong>Exemplos:</strong>
                     <ul>
                       <li>
-                        <Link href="https://b3api.online/api/crypto/all/bitcoin" passHref target="_blank">https://b3api.online/api/crypto/all/bitcoin</Link> - Retorna dados sobre a criptomoeda Bitcoin (BTC).
+                        <Link href="https://b3api.me/api/crypto/all/bitcoin" passHref target="_blank">https://b3api.me/api/crypto/all/bitcoin</Link> - Retorna dados sobre a criptomoeda Bitcoin (BTC).
                       </li>
                       <li>
-                        <Link href="https://b3api.online/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" passHref target="_blank">https://b3api.online/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</Link> - Retorna informações a carteira de criptomoedas.
+                        <Link href="https://b3api.me/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" passHref target="_blank">https://b3api.me/api/crypto/wallet/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</Link> - Retorna informações a carteira de criptomoedas.
                       </li>
                       <li>
-                        <Link href="https://b3api.online/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883" passHref target="_blank">https://b3api.online/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883</Link> - Retorna informações sobre uma transação da blockchain.
+                        <Link href="https://b3api.me/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883" passHref target="_blank">https://b3api.me/api/crypto/transaction/20e64580a0d8520dd676357421f6f39873e61c69c96a1f56f499a21b26592883</Link> - Retorna informações sobre uma transação da blockchain.
                       </li>
                     </ul>
                   </div>
