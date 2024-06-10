@@ -11,7 +11,7 @@ const BoostrapNavbar = () => {
       <Container>
         <Link href="/" passHref className="text-decoration-none">
           <Navbar.Brand className="d-flex align-items-center text-center">
-            <Image src="/B3API.png" alt="B3API Icon" width={50} height={50} priority={true} />
+          <img src="/B3API.png" alt="B3API Icon" width="50" height="50" />
             <div className="fw-bold ms-2">B3API</div>
           </Navbar.Brand>
         </Link>

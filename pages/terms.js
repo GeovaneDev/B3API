@@ -1,4 +1,4 @@
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
@@ -7,14 +7,17 @@ import Footer from '../components/Footer';
 const TermsOfService = () => {
   return (
     <div>
-      <DefaultSeo
+      <NextSeo
         title="B3API - Termos de Uso | Políticas de Acesso e Uso da API B3"
         description="Consulte os Termos de Uso da B3API para orientações sobre o uso da API. Ao acessar nossos serviços, você aceita os termos e políticas aplicáveis."
+        canonical="https://b3api.me/terms"
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
           url: 'https://b3api.me/terms',
           site_name: 'B3API - Termos de Uso | Políticas de Acesso e Uso da API B3',
+          title: 'B3API - Termos de Uso | Políticas de Acesso e Uso da API B3',
+          description: 'Consulte os Termos de Uso da B3API para orientações sobre o uso da API. Ao acessar nossos serviços, você aceita os termos e políticas aplicáveis.',
           images: [
             {
               url: 'https://b3api.me/B3API.png',
@@ -23,47 +26,32 @@ const TermsOfService = () => {
               alt: 'B3API Icon',
             },
           ],
-          title: "B3API - Termos de Uso | Políticas de Acesso e Uso da API B3",
-          description: "Consulte os Termos de Uso da B3API para orientações sobre o uso da API. Ao acessar nossos serviços, você aceita os termos e políticas aplicáveis."
         }}
         twitter={{
           cardType: 'summary_large_image',
         }}
         additionalMetaTags={[
           {
-            name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0',
-          },
-          {
-            name: 'robots',
-            content: 'index, follow',
-          },
-          {
-            name: 'Strict-Transport-Security',
+            httpEquiv: 'Strict-Transport-Security',
             content: 'max-age=63072000; includeSubdomains; preload',
           },
           {
-            name: 'X-Content-Type-Options',
+            httpEquiv: 'X-Content-Type-Options',
             content: 'nosniff',
           },
           {
-            name: 'X-Frame-Options',
-            content: 'DENY',
-          },
-          {
-            name: 'X-XSS-Protection',
+            httpEquiv: 'X-XSS-Protection',
             content: '1; mode=block',
           },
           {
-            name: 'Referrer-Policy',
+            name: 'referrer',
             content: 'same-origin',
           },
           {
-            name: 'Set-Cookie',
+            name: 'set-cookie',
             content: 'HttpOnly; Secure; SameSite=Strict',
-          }
+          },
         ]}
-        canonical="https://b3api.me/terms"
       />
       <Navbar />
 

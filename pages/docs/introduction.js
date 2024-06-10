@@ -1,4 +1,4 @@
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
@@ -9,14 +9,17 @@ import DocsMenu from '../../components/DocsMenu';
 const Introduction = () => {
   return (
     <div>
-      <DefaultSeo
+      <NextSeo
         title="B3API - Documentação e Introdução | Dados Financeiros Brasileiros em Tempo Real"
         description="Explore a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Inicie sua jornada com nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas."
+        canonical="https://b3api.me/docs/introduction"
         openGraph={{
           type: 'website',
           locale: 'pt_BR',
           url: 'https://b3api.me/docs/introduction',
           site_name: 'B3API - Introdução da Documentação',
+          title: 'B3API - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro',
+          description: 'Descubra a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas.',
           images: [
             {
               url: 'https://b3api.me/B3API.png',
@@ -25,47 +28,32 @@ const Introduction = () => {
               alt: 'B3API Icon',
             },
           ],
-          title: "B3API - Introdução | Dados em Tempo Real do Mercado de Ações Brasileiro",
-          description: "Descubra a B3API, sua fonte confiável para dados em tempo real do mercado de ações brasileiro. Explore nossa introdução e comece a utilizar a API hoje mesmo para obter informações precisas e atualizadas.",
         }}
         twitter={{
           cardType: 'summary_large_image',
         }}
         additionalMetaTags={[
           {
-            name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0',
-          },
-          {
-            name: 'robots',
-            content: 'index, follow',
-          },
-          {
-            name: 'Strict-Transport-Security',
+            httpEquiv: 'Strict-Transport-Security',
             content: 'max-age=63072000; includeSubdomains; preload',
           },
           {
-            name: 'X-Content-Type-Options',
+            httpEquiv: 'X-Content-Type-Options',
             content: 'nosniff',
           },
           {
-            name: 'X-Frame-Options',
-            content: 'DENY',
-          },
-          {
-            name: 'X-XSS-Protection',
+            httpEquiv: 'X-XSS-Protection',
             content: '1; mode=block',
           },
           {
-            name: 'Referrer-Policy',
+            name: 'referrer',
             content: 'same-origin',
           },
           {
-            name: 'Set-Cookie',
+            name: 'set-cookie',
             content: 'HttpOnly; Secure; SameSite=Strict',
-          }
+          },
         ]}
-        canonical="https://b3api.me/docs/introduction"
       />
       <Navbar />
 

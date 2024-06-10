@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,42 +9,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const NotFoundPage = () => {
   return (
     <div>
-      <DefaultSeo
+      <NextSeo
         title="BrInvestAPI - Erro 404"
         description="Página não encontrada."
+        noindex={true}
+        nofollow={true}
+        openGraph={{
+          type: 'website',
+          locale: 'pt_BR',
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
         additionalMetaTags={[
           {
-            name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0',
-          },
-          {
-            name: 'robots',
-            content: 'noindex, nofollow',
-          },
-          {
-            name: 'Strict-Transport-Security',
+            httpEquiv: 'Strict-Transport-Security',
             content: 'max-age=63072000; includeSubdomains; preload',
           },
           {
-            name: 'X-Content-Type-Options',
+            httpEquiv: 'X-Content-Type-Options',
             content: 'nosniff',
           },
           {
-            name: 'X-Frame-Options',
-            content: 'DENY',
-          },
-          {
-            name: 'X-XSS-Protection',
+            httpEquiv: 'X-XSS-Protection',
             content: '1; mode=block',
           },
           {
-            name: 'Referrer-Policy',
+            name: 'referrer',
             content: 'same-origin',
           },
           {
-            name: 'Set-Cookie',
+            name: 'set-cookie',
             content: 'HttpOnly; Secure; SameSite=Strict',
-          }
+          },
         ]}
       />
       <Navbar />
