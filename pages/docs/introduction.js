@@ -32,28 +32,6 @@ const Introduction = () => {
         twitter={{
           cardType: 'summary_large_image',
         }}
-        additionalMetaTags={[
-          {
-            httpEquiv: 'Strict-Transport-Security',
-            content: 'max-age=63072000; includeSubdomains; preload',
-          },
-          {
-            httpEquiv: 'X-Content-Type-Options',
-            content: 'nosniff',
-          },
-          {
-            httpEquiv: 'X-XSS-Protection',
-            content: '1; mode=block',
-          },
-          {
-            name: 'referrer',
-            content: 'same-origin',
-          },
-          {
-            name: 'set-cookie',
-            content: 'HttpOnly; Secure; SameSite=Strict',
-          },
-        ]}
       />
       <Navbar />
 

@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
-import { NextSeo } from 'next-seo';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,43 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const NotFoundPage = () => {
   return (
     <div>
-      <NextSeo
-        title="BrInvestAPI - Erro 404"
-        description="Página não encontrada."
-        noindex={true}
-        nofollow={true}
-        openGraph={{
-          type: 'website',
-          locale: 'pt_BR',
-        }}
-        twitter={{
-          cardType: 'summary_large_image',
-        }}
-        additionalMetaTags={[
-          {
-            httpEquiv: 'Strict-Transport-Security',
-            content: 'max-age=63072000; includeSubdomains; preload',
-          },
-          {
-            httpEquiv: 'X-Content-Type-Options',
-            content: 'nosniff',
-          },
-          {
-            httpEquiv: 'X-XSS-Protection',
-            content: '1; mode=block',
-          },
-          {
-            name: 'referrer',
-            content: 'same-origin',
-          },
-          {
-            name: 'set-cookie',
-            content: 'HttpOnly; Secure; SameSite=Strict',
-          },
-        ]}
-      />
       <Navbar />
-
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6 text-center">
