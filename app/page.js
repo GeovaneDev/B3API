@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,10 +13,10 @@ const HeroSection = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="hero-content">
-              <img src="/B3API.png" alt="B3API Logo" width="140" height="140" />
-              <h1 className="hero-title">B3API</h1>
-              <p className="lead-text">Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.</p>
-              <Link href="/docs" className="btn btn-primary btn-lg rounded-pill start-button">Comece Agora</Link>
+              <Image src="/B3API.png" width={140} height={140} alt="B3API logo" priority={true} />
+              <h1 className="hero-title display-3 fw-bold">B3API</h1>
+              <p className="lead text-muted fs-5 mb-4">Sua fonte confiável de dados em tempo real sobre ações, cotações e índices do mercado financeiro brasileiro.</p>
+              <Link href="/docs" className="btn btn-primary btn-lg rounded-pill shadow-lg py-3">Comece Agora</Link>
             </div>
           </div>
         </div>
@@ -28,30 +29,30 @@ const FeatureSection = () => {
   return (
     <section className="feature-section text-center my-5">
       <div className="container">
-        <h2 className="section-title">Por que Escolher a B3API?</h2>
+        <h2 className="section-title display-4 fw-bold mb-5">Por que Escolher a B3API?</h2>
         <div className="row justify-content-center">
-          <FeatureItem title="Dados Abrangentes" text="Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros." color="blue" icon="fas fa-database" />
-          <FeatureItem title="Atualizações em Tempo Real" text="Mantenha-se informado com dados atualizados do mercado de ações." color="green" icon="fas fa-clock" />
-          <FeatureItem title="Integração Fácil" text="Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores." color="teal" icon="fas fa-plug" />
+          <FeatureItem title="Dados Abrangentes" text="Acesse uma ampla gama de dados do mercado de ações, incluindo métricas e índices financeiros." color="info" icon="database" />
+          <FeatureItem title="Atualizações em Tempo Real" text="Mantenha-se informado com dados atualizados do mercado de ações." color="success" icon="clock" />
+          <FeatureItem title="Integração Fácil" text="Integração simples e fácil em suas aplicações com nossa API amigável para desenvolvedores." color="warning" icon="plug" />
         </div>
       </div>
     </section>
   );
 };
 
-function FeatureItem({ title, text, color, icon }) {
+const FeatureItem = ({ title, text, color, icon }) => {
   return (
     <div className="col-lg-4 mb-4">
-      <div className={`card bg-${color} text-dark shadow`}>
+      <div className={`card text-dark bg-${color} bg-opacity-25 shadow-lg rounded-pill py-4`}>
         <div className="card-body">
-          <i className={`fas ${icon} fa-3x mb-3`} />
-          <h5 className="card-title">{title}</h5>
+          <i className={`fas fa-${icon} fa-3x mb-3`} />
+          <h5 className="card-title fw-bold">{title}</h5>
           <p className="card-text">{text}</p>
         </div>
       </div>
     </div>
   );
-}
+};
 
 const Home = () => {
   return (

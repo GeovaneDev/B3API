@@ -3,30 +3,42 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle, faLink } from '@fortawesome/free-solid-svg-icons';
+import { Card, ListGroup } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DocsMenu = () => {
   const router = useRouter();
 
   return (
-    <div className="col-md-3">
-      <div className="bg-light p-4 rounded shadow">
-        <h3 className="text-center mb-4">
-          <Link href="/docs" passHref className="text-decoration-none text-dark">Documentação</Link>
-        </h3>
-        <ul className="list-group list-group-flush">
-          <li className={`list-group-item border-0 rounded-pill ${router.pathname === '/docs/introduction' ? 'active rounded-pill text-light' : ''}`}>
-            <Link href="/docs/introduction" passHref className={`text-decoration-none text-dark rounded-pill d-block p-2 ${router.pathname === '/docs/introduction' ? 'bg-primary text-white' : ''}`} style={{ fontSize: '1.1rem' }}>
-                <FontAwesomeIcon icon={faInfoCircle} /> Introdução
+    <Card className="bg-light p-2 rounded shadow-sm border-0">
+      <Card.Body>
+        <Card.Title className="text-center mb-4">
+          <Link href="/docs" passHref className="text-decoration-none text-dark fs-3 fw-bold">Documentação</Link>
+        </Card.Title>
+        <ListGroup variant="flush">
+          <ListGroup.Item className="border-0 p-0 mb-2">
+            <Link href="/docs/introduction" passHref
+                className={`text-decoration-none d-block py-2 px-3 rounded transition ${
+                  router.pathname === '/docs/introduction' ? 'bg-primary text-white' : 'text-dark'
+                }`}
+                style={{ fontSize: '1.2rem', fontWeight: '500' }}
+              >
+                <FontAwesomeIcon icon={faInfoCircle} className="me-2" /> Introdução
             </Link>
-          </li>
-          <li className={`list-group-item border-0 rounded-pill ${router.pathname === '/docs/endpoints' ? 'active rounded-pill text-light' : ''}`}>
-            <Link href="/docs/endpoints" passHref className={`text-decoration-none text-dark rounded-pill d-block p-2 ${router.pathname === '/docs/endpoints' ? 'bg-primary text-white' : ''}`} style={{ fontSize: '1.1rem' }}>
-                <FontAwesomeIcon icon={faLink} /> Endpoints
+          </ListGroup.Item>
+          <ListGroup.Item className="border-0 p-0 mb-2">
+            <Link href="/docs/endpoints" passHref
+                className={`text-decoration-none d-block py-2 px-3 rounded transition ${
+                  router.pathname === '/docs/endpoints' ? 'bg-primary text-white' : 'text-dark'
+                }`}
+                style={{ fontSize: '1.2rem', fontWeight: '500' }}
+              >
+                <FontAwesomeIcon icon={faLink} className="me-2" /> Endpoints
             </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
+          </ListGroup.Item>
+        </ListGroup>
+      </Card.Body>
+    </Card>
   );
 };
 
