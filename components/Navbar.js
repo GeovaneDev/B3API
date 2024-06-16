@@ -7,24 +7,24 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const BoostrapNavbar = () => {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark" className="py-2">
+    <Navbar bg="dark" expand="lg" variant="dark" className="py-3 shadow-sm">
       <Container>
-        <Link href="/" passHref className="text-decoration-none">
-          <Navbar.Brand className="d-flex align-items-center text-center">
-          <img src="/B3API.png" alt="B3API Icon" width="50" height="50" />
-            <div className="fw-bold ms-2">B3API</div>
+        <Link href="/" className="text-decoration-none">
+          <Navbar.Brand className="d-flex align-items-center">
+            <img src="/B3API.png" width="50" height="50" alt="B3API logo" />
+            <div className="fw-bold ms-3 text-uppercase">B3API</div>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav className="ms-auto align-items-center">
-            <Nav.Item>
-              <Link href="/docs" passHref className="btn btn-primary rounded-pill mx-3" style={{ padding: '0.75rem 1.5rem', fontSize: '1.1rem', fontWeight: '500' }}>Documentação</Link>
+          <Nav className="align-items-center">
+            <Nav.Item className="me-3">
+              <Link href="/docs" passHref className="btn btn-primary rounded-pill px-4 py-3 text-uppercase" style={{ fontSize: '1rem', fontWeight: '600' }}>Documentação</Link>
             </Nav.Item>
             <Nav.Item>
-              <Link href="https://github.com/GeovaneDev/B3API" passHref target="_blank" className="nav-link" rel="noopener noreferrer">
+              <Link href="https://github.com/GeovaneDev/B3API" passHref className="nav-link d-flex align-items-center" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
-                <span className="d-inline ms-2">GitHub</span>
+                <span className="ms-2">GitHub</span>
               </Link>
             </Nav.Item>
           </Nav>

@@ -19,15 +19,14 @@ const NotFoundPage = () => {
               width={600}
               height={600}
             />
-            <h2 className="mt-4">Página não encontrada</h2>
-            <p className="lead">
+            <h2 className="mt-4 display-4 fw-bold">Página não encontrada</h2>
+            <p className="lead text-muted">
               A página que você está procurando pode ter sido removida ou não está mais disponível.
             </p>
-            <Link href="/" passHref className="btn btn-primary rounded-pill">Voltar para a página inicial</Link>
+            <Link href="/" className="btn btn-primary rounded-pill shadow-lg py-3">Voltar para a página inicial</Link>
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );
